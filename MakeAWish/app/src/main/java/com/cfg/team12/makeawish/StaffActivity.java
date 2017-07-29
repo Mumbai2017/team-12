@@ -20,7 +20,7 @@ public class StaffActivity extends AppCompatActivity {
     //Layout views
     private ViewPager viewPager;
     private TabLayout tabLayout;
- 
+
 
     private Window window;
     private Toolbar toolbar;

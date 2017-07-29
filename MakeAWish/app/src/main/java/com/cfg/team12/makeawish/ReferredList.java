@@ -44,6 +44,8 @@ public class ReferredList extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
 
+        getJSONdata();
+
         for (int i = 0; i < 5; i++) {
             BigInteger bigInteger2 = new BigInteger("543534535");
             ReferredData referredData2 = new ReferredData("Rohit", "Mumbai", bigInteger);
@@ -51,6 +53,9 @@ public class ReferredList extends AppCompatActivity {
 
         }
         recyclerViewAdapter.notifyDataSetChanged();
+    }
+
+    private void getJSONdata() {
     }
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
