@@ -2,25 +2,30 @@
 require('init.php');
 
 //$name=$_POST['name'];
-/*$name=$_POST['name'];
+$name=$_POST['name'];
 $area=$_POST['area'];
 $govtid=$_POST['govtid'];
 $idno=$_POST['idno'];
-$hospital=$_POST['hospital'];*/
+$hospital='hospital';
+$email=$_POST['email'];
+$password$_POST['password'];
 
-$name='name';
+/*$name='name';
 $area='area';
 $govtid='govtid';
 $idno='5';
-$hospital='hospital';
+$hospital='hospital';*/
+
 
 //$lat="54";
 //$lon="1";
 
-//$sql="insert into volunteer(Volunteer_id,Name,Area,GovtID,IDno,Hospital,Approved,Points) values(1,'$name','$area','$govtid','$idno','$hospital',0,0);";
+$sql="insert into volunteer(email,password,Name,Area,GovtID,IDno,Hospital,Approved,Points) values('$email','$password','$name','$area','$govtid','$idno','$hospital','0','0');";
+
+/*$sql="INSERT INTO `volunteer` ( `Name`, `Area`, `GovtID`, `IDno`, `Hospital`, `Approved`, `Points`) VALUES ( 'rr', 'rr', '22', '323', 'dfsdf', '0', '1');";*/
 
 
-$sql="insert into volunteer(name) values("rohit");";
+/*$sql="insert into volunteer(IDno) values(5);";*/
 $response=array();
 
 if(mysqli_query($con,$sql)){

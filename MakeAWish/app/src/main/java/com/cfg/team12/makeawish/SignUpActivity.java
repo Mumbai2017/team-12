@@ -58,10 +58,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void register() {
-        String email2 = email.getText().toString();
-        String password2 = password.getText().toString();
-        String aadhar2=aadhar.getText().toString();
-        String location2=location.getText().toString();
+        final String email2 = email.getText().toString();
+        final String password2 = password.getText().toString();
+        final String aadhar2=aadhar.getText().toString();
+        final String location2=location.getText().toString();
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -88,13 +88,19 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params=new HashMap<String, String>();
-                params.put("username",username);
-                params.put("password",pass);
+                params.put("name",email2);
+                params.put("area",location2);
+                params.put("idno",aadhar2);
+                params.put("password",password2);
+                params.put("email",email2);
+                params.put("location",location2);
+               // params.put("hospital",)
+
 
                 return params;
             }
         };
-        MySingleton.getmInstance(InsertData.this).addToRequestQueue(stringRequest);
+        MySingleton.getmInstance(SignUpActivity.this).addToRequestQueue(stringRequest);
     }
 
     }
