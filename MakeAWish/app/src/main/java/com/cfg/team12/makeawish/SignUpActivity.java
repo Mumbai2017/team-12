@@ -93,7 +93,7 @@ public class SignUpActivity extends AppCompatActivity {
                 params.put("idno",aadhar2);
                 params.put("password",password2);
                 params.put("email",email2);
-                params.put("location",location2);
+               // params.put("location",location2);
                // params.put("hospital",)
 
 

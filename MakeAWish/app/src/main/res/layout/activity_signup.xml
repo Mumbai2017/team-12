@@ -40,6 +40,46 @@
                 android:hint="Email"
               />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select id Type ?"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adharCard"
+                android:text="Adhar Card"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/electionCard"
+                android:text="ElectionCard"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rationCard"
+                android:text="RationCard"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DrivingLicense"
+                android:text="DrivingLicense"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </RadioGroup>
 
         <EditText android:id="@+id/input_aadhar"
             android:layout_width="match_parent"
