@@ -33,13 +33,13 @@ public class SignUpActivity extends AppCompatActivity {
     @InjectView(R.id.input_aadhar)EditText aadhar;
     @InjectView(R.id.input_city)EditText location;
 
-    String url="http://192.168.1.5/updateinfo.php";
+    String url="http://freeecommercewebsite.in/Cfg/volunterrreg.php";
     AlertDialog.Builder builder;
 
     @InjectView(R.id.btn_signup)
     FButton signUpButton;
-    @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
-    TextView _signupLink;
+   /* @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
+    TextView _signupLink;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,4 +104,4 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     }
-}
+
