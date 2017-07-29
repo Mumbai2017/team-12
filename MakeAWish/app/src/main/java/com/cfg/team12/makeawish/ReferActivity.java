@@ -12,8 +12,8 @@ import info.hoang8f.widget.FButton;
 
 public class ReferActivity extends AppCompatActivity {
 
-    @InjectView(com.cfg.team12.makeawish.R.id.input_email)
-    EditText email;
+    @InjectView(com.cfg.team12.makeawish.R.id.input_name)
+    EditText name;
     @InjectView(R.id.input_phone)
     EditText phone;
     @InjectView(R.id.input_address)
@@ -39,7 +39,7 @@ public class ReferActivity extends AppCompatActivity {
     }
 
     private void register() {
-        String email2 = email.getText().toString();
+        String email2 = name.getText().toString();
         String phone2 = phone.getText().toString();
         String location2 = location.getText().toString();
 
