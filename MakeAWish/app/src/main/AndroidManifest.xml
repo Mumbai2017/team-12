@@ -11,20 +11,18 @@
         android:roundIcon="@mipmap/weblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".DonorActivity" />
         <activity android:name=".ReferActivity" />
-        <activity android:name=".ReferredList" >
+        <activity android:name=".ReferredList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +31,11 @@
         </activity>
         <activity android:name=".VolunterData" />
         <activity android:name=".Volunteer_Form1" />
-        <activity android:name=".StaffActivity"></activity>
+        <activity android:name=".StaffActivity" />
+        <activity
+            android:name=".VolunteerDashboardActivity"
+            android:label="@string/title_activity_volunteer_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
