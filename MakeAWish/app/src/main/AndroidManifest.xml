@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DonorActivity"></activity>
+        <activity android:name=".DonorActivity" />
+        <activity android:name=".ReferActivity"></activity>
     </application>
 
 </manifest>
