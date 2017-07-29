@@ -44,6 +44,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
     ArrayList<ReferredData> arraylist = new ArrayList<>();
     String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
     int flag = 0;
+    public static String childName="";
 
 
     @Override
@@ -258,7 +259,10 @@ public class VolunteerDashboardActivity extends AppCompatActivity
                 relativeLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        int itemPosition = recyclerView.getChildLayoutPosition(v);
+                        String item = refer.get(itemPosition);
+                        Toast.makeText(mContext, item, Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(VolunteerDashboardActivity.this,VolunterData.class));
                     }
                 });
 
