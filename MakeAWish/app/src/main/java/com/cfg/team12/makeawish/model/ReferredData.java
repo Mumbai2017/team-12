@@ -9,6 +9,7 @@ import java.math.BigInteger;
 
 public class ReferredData {
 
+    public int id;
     public String name;
     public String address;
     public BigInteger phone;

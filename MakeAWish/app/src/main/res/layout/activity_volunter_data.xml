@@ -14,6 +14,11 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Child Name"
+            android:id="@+id/input_name"/>
         <Spinner
             android:id="@+id/spinner_select1"
             android:layout_width="match_parent"

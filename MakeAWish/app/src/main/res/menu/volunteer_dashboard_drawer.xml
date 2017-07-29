@@ -34,7 +34,7 @@
                 android:id="@+id/nav_refer"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Refer" />
-        
+
    <!-- </item>-->
 
 </menu>

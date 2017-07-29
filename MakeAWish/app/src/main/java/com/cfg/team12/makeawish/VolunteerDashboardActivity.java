@@ -43,7 +43,8 @@ public class VolunteerDashboardActivity extends AppCompatActivity
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<ReferredData> arraylist = new ArrayList<>();
     String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
-    int flag = 0;
+    public static int flag = 11;
+    public static String childName = "";
 
 
     @Override
@@ -194,11 +195,11 @@ public class VolunteerDashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) { */
 
-       if (id == R.id.nav_vouchers) {
-           startActivity(new Intent(VolunteerDashboardActivity.this,Vouchers.class));
+        if (id == R.id.nav_vouchers) {
+            startActivity(new Intent(VolunteerDashboardActivity.this, Vouchers.class));
 
         } else {
-           Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -208,7 +209,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
-        ArrayList<ReferredData> referredDatas = new ArrayList<>();
+        public ArrayList<ReferredData> referredDatas = new ArrayList<>();
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
 
 
@@ -231,7 +232,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
             holder.txtName.setText(referredDatas.get(position).getName());
             BigInteger number = referredDatas.get(position).getPhone();
-
+            holder.id = referredDatas.get(position).id;
 
         }
 
@@ -242,27 +243,34 @@ public class VolunteerDashboardActivity extends AppCompatActivity
         }
     }
 
-        class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-            protected TextView txtName, txtAddress;
-            protected ImageView imageView;
+        protected TextView txtName, txtAddress;
+        protected ImageView imageView;
+        int id;
 
-            public RecyclerViewHolder(View itemView, final Context context) {
-                super(itemView);
-                txtName = (TextView) itemView.findViewById(R.id.txt_name);
+        public RecyclerViewHolder(View itemView, final Context context) {
+            super(itemView);
+            txtName = (TextView) itemView.findViewById(R.id.txt_name);
 
-                txtAddress = (TextView) itemView.findViewById(R.id.txt_address);
+            txtAddress = (TextView) itemView.findViewById(R.id.txt_address);
 
 
-                RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);
-                relativeLayout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
 
-                    }
-                });
 
-            }
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int itemPosition = recyclerView.getChildLayoutPosition(v);
+                    flag = id;
+
+                    Toast.makeText(getApplicationContext(), "" + flag, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(VolunteerDashboardActivity.this, VolunterData.class));
+                }
+            });
+
         }
     }
+}
 
