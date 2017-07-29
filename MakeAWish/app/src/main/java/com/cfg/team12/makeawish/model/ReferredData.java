@@ -1,5 +1,7 @@
 package com.cfg.team12.makeawish.model;
 
+import java.math.BigInteger;
+
 /**
  * Created by rohit71 on 29-07-2017.
  */
@@ -9,9 +11,9 @@ public class ReferredData {
 
     public String name;
     public String address;
-    public String phone;
+    public BigInteger phone;
 
-    public ReferredData(String name, String address, String phone) {
+    public ReferredData(String name, String address, BigInteger phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -34,11 +36,11 @@ public class ReferredData {
         this.address = address;
     }
 
-    public String getPhone() {
+    public BigInteger getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(BigInteger phone) {
         this.phone = phone;
     }
 

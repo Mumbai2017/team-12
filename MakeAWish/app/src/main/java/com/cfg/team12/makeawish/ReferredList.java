@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.cfg.team12.makeawish.model.ReferredData;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -31,11 +32,12 @@ public class ReferredList extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<ReferredData> data = new ArrayList<>();
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter();
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         for (int i = 0; i < 5; i++) {
-            ReferredData referredData = new ReferredData("Rohit", "Mumbai", "8655156231");
+            BigInteger bigInteger = new BigInteger("543534535");
+            ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
             data.add(referredData);
             recyclerViewAdapter.notifyDataSetChanged();
         }
@@ -48,7 +50,7 @@ public class ReferredList extends AppCompatActivity {
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
 
 
-        RecyclerViewAdapter(ArrayList<ReferredData> referredDataArrayList, ArrayList<Bitmap> forecastList) {
+        RecyclerViewAdapter(ArrayList<ReferredData> referredDataArrayList) {
             referredDatas = referredDataArrayList;
 
         }
@@ -61,6 +63,9 @@ public class ReferredList extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+            holder.txtAddress.setText(referredDatas.get(position).getAddress());
+            holder.txtName.setText(referredDatas.get(position).getAddress());
+            BigInteger number = referredDatas.get(position).getPhone();
 
 
         }
