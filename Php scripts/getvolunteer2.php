@@ -5,8 +5,7 @@ require 'init.php';
 $name=$_POST['name'];
 $pass=$_POST['pass'];
 
-$name='email';
-$pass='password';
+
 
 
 

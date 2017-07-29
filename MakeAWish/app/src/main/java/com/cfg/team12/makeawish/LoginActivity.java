@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
     String data[] = new String[]{"Donor", "Volunteer"};
-    String url = "http://freeecommercewebsite.in/Cfg/volunterrreg.php";
+    String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
     AlertDialog.Builder builder;
 
     @InjectView(com.cfg.team12.makeawish.R.id.input_email)
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
-
+        builder=new AlertDialog.Builder(LoginActivity.this);
         stakeholder = (Spinner) findViewById(R.id.spinner_select);
         stakeholder.setAdapter(arrayAdapter);
 
