@@ -10,44 +10,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
-
-        <ImageView android:src="@mipmap/weblogo"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal" />
-
-
-
-        <TextView android:id="@+id/edt_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:inputType="textCapWords"
-            android:hint="Name"
-            />
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
         <Spinner
-
-            android:id="@+id/spinner_select"
+            android:id="@+id/spinner_select1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         </Spinner>
-
-
         <EditText android:id="@+id/input_wish1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:hint="Enter Wish 1"
-            />
-
-
+            android:hint="Enter Wish 1" />
         <EditText android:id="@+id/input_wish_desc1"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -57,41 +32,45 @@
             />
 
 
+        <Spinner
+            android:id="@+id/spinner_select2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+        </Spinner>
         <EditText android:id="@+id/input_wish2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:hint="Enter Wish 2"
-            />
-
-
+            android:hint="Enter Wish 2"/>
         <EditText android:id="@+id/input_wish_desc2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="top"
             android:hint="Enter wish description"
             />
+
+
+        <Spinner
+            android:id="@+id/spinner_select3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+        </Spinner>
         <EditText android:id="@+id/input_wish3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:hint="Enter Wish 2"
-            />
-
-
+            android:hint="Enter Wish 2"/>
         <EditText android:id="@+id/input_wish_desc3"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:gravity="top"
-            android:hint="Enter wish description"
-            />
+            android:hint="Enter wish description" />
 
 
         <info.hoang8f.widget.FButton
             android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:text="Register data"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
