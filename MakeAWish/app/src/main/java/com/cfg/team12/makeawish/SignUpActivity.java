@@ -23,8 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     @InjectView(R.id.btn_signup)
     FButton signUpButton;
-    @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
-    TextView _signupLink;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
