@@ -45,7 +45,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<ReferredData> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/getchildfromvolid.php";
+    String url = "http://freeecommercewebsite.in/Cfg/getchildfromvolid.php?";
     public static int flag = 11;
     public static String childName = "";
 
@@ -94,7 +94,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
     public synchronized void getList() {
 
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"id="+1, null,
                 new Response.Listener<org.json.JSONArray>() {
                     @Override
                     public void onResponse(org.json.JSONArray response) {

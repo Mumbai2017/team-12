@@ -116,7 +116,7 @@ public class DoctorDashboard extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("doc_id", "1");
+                params.put("id", "1");
                 //  params.put("pass", password);
 
                 // params.put("location",location2);
@@ -143,6 +143,7 @@ public class DoctorDashboard extends AppCompatActivity {
         recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setAdapter(recyclerViewAdapter);
         flag = 1;
+        recyclerViewAdapter.notifyDataSetChanged();
 
         Toast.makeText(getApplicationContext(), "Final :" + arraylist.size(), Toast.LENGTH_SHORT).show();
         // return arrayList;
