@@ -45,7 +45,7 @@ class ChildProfile(models.Model):
     bigwish3 = models.TextField(max_length=500)
 
     def __str__(self):
-        return self.name + " " + self.disease
+        return self.name + " - " + self.disease
 
 
 class Volunteer(models.Model):
@@ -61,7 +61,7 @@ class Volunteer(models.Model):
     email = models.EmailField(default="suhailsbarot@gmail.com")
 
     def __str__(self):
-        return self.name + " " + self.volunteer_type
+        return self.name + " - " + self.volunteer_type + " - " + str(self.status)
 
 
 class Doctor(models.Model):
