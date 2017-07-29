@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,8 @@ public class VolunterData extends AppCompatActivity {
         s2 = (Spinner) findViewById(R.id.spinner_select2);
         s3 = (Spinner) findViewById(R.id.spinner_select3);
 
+
+        Toast.makeText(this, "vol"+VolunteerDashboardActivity.flag, Toast.LENGTH_SHORT).show();
         List<String> list = new ArrayList<>();
         list.add("I wish to have");
         list.add("I wish to want");
