@@ -1,13 +1,13 @@
 <?php
-/*$db="freeecom_gpsinfo";
+$db="freeecom_cfg";
 $host="103.233.76.243";
 $password="worldmart123";
-$user="root";*/
+$user="freecom_gps";
 
-$user="root";
+/*$user="root";
 $password="";
 $db="gps";
-$host="localhost";
+$host="localhost";*/
 
 
 $con=mysqli_connect($host,$user,$password,$db);

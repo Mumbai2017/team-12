@@ -8,7 +8,6 @@
     android:padding="20dp"
     android:orientation="vertical"
 
-    android:background="@color/colorPrimary"
     tools:context="com.cfg.team12.makeawish.MainActivity">
 
     <ImageView
