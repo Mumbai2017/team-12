@@ -71,7 +71,7 @@ class Doctor(models.Model):
     contact_no = models.BigIntegerField()
 
     def __str__(self):
-        return self.name;
+        return self.name
 
 
 class Donor(models.Model):
@@ -83,7 +83,7 @@ class Donor(models.Model):
     amount = models.IntegerField()
 
     def __str__(self):
-        self.name
+        return self.name
 
 
 class Transaction(models.Model):
