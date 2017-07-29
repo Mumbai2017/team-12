@@ -16,8 +16,8 @@ public class VolunterData extends AppCompatActivity {
     @InjectView(R.id.input_name)
     TextView edtName;
     @InjectView(R.id.input_wish1) EditText wish1;
-    @InjectView(R.id.input_wish1) EditText wish2;
-    @InjectView(R.id.input_wish1) EditText wish3;
+    @InjectView(R.id.input_wish2) EditText wish2;
+    @InjectView(R.id.input_wish3) EditText wish3;
 
     @InjectView(R.id.input_wish_desc1) EditText wishdes1;
     @InjectView(R.id.input_wish_desc2) EditText wishdes2;
