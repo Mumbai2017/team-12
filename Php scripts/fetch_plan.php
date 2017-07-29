@@ -1,5 +1,6 @@
 <?php
 require 'init.php';
+$_POST['wish'];
 
 $sql="SELECT * from plan where wish like '%".$wish."%'";
 
