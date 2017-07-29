@@ -1,27 +1,30 @@
 <?php
 require('init.php');
 
-//$name=$_POST['name'];
-$name=$_POST['name'];
-$area=$_POST['area'];
-$govtid=$_POST['govtid'];
-$idno=$_POST['idno'];
-$hospital='hospital';
-$email=$_POST['email'];
-$password=$_POST['password'];
-
-/*$name='name';
-$area='area';
-$govtid='govtid';
-$idno='5';
-$hospital='hospital';*/
+$case_no=$_POST['case_no'];
+$hospital=$_POST['hospital'];
+$child_name=$_POST['child_name'];
+$gender=$_POST['gender'];
+$dob=$_POST['dob'];
+$contact_no=$_POST['contact_no'];
+$father_name=$_POST['father_name'];
+$mother_name=$_POST['mother_name'];
+$disease=$_POST['disease'];
 
 
-//$lat="54";
-//$lon="1";
+/*$case_no="CSE11";
+$hospital="Dsrv";
+$child_name="Rahul";
+$gender="M";
+$dob="1999-12-25";
+$contact_no=98767;
+$father_name="uejd";
+$mother_name="wejied";
+$disease="cdi dowd";*/
 
-$sql="insert into volunteer(email,password,Name,Area,GovtID,IDno,Hospital,Approved,Points) values('$email','$password','$name','$area','$govtid','$idno','$hospital','0','0');";
 
+$sql="insert into childprofile(case_no,hospital,child_name,sex,dob,contact_no,father_name,mother_name,disease) values('$case_no','$hospital','$child_name','$gender','$dob','$contact_no','$father_name','$mother_name','$disease');";
+echo $sql;
 /*
 $sql="insert into volunteer(email,password,Name,Area,GovtID,IDno,Hospital,Approved,Points) values('email','password','name','area','34','55','hospital','0','0');";*/
 
@@ -35,7 +38,6 @@ if(mysqli_query($con,$sql)){
 	$code="reg_success";
 	$message="Registered Successfully";
 }else{
-	 
 	$code="reg_fail";
 	$message="Registration Failed";
 }
