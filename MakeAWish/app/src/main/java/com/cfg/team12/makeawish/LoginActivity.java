@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (response.equals("Login success")) {
-                    startActivity(new Intent(LoginActivity.this, ReferredList.class));
+                    startActivity(new Intent(LoginActivity.this, VolunteerDashboardActivity.class));
                 } else {
                     builder.setTitle("Server Response");
 
@@ -89,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
 //                        edtEmail.setText("");
 //                        edtPassword.setText("");
+                            //startActivity(new Intent(LoginActivity.this,VolunteerDashboardActivity.class));
                         }
                     });
                     AlertDialog alertDialog = builder.create();
