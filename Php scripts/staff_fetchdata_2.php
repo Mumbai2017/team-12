@@ -1,5 +1,5 @@
 <?php
-require('init.php');
+require 'init.php';
 
 $sql = "SELECT * from childprofile where status==4"
 $response=array();
