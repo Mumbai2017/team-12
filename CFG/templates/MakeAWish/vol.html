@@ -101,19 +101,19 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{% url 'admin_panel' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="wishes.html"><i class="fa fa-bar-chart-o fa-fw"></i> Wishes</a>
+                        <a href="{% url 'wishes_panel' %}"><i class="fa fa-bar-chart-o fa-fw"></i> Wishes</a>
                     </li>
                     <li>
-                        <a href="vol.html"><i class="fa fa-table fa-fw"></i> Volunteers</a>
+                        <a href="{% url 'volunteer_panel' %}"><i class="fa fa-table fa-fw"></i> Volunteers</a>
                     </li>
                     <li>
-                        <a href="doc.html"><i class="fa fa-edit fa-fw"></i> Doctors</a>
+                        <a href="{% url 'doctor_panel' %}"><i class="fa fa-edit fa-fw"></i> Doctors</a>
                     </li>
                     <li>
-                        <a href="donor.html"><i class="fa fa-edit fa-fw"></i> Donors</a>
+                        <a href="{% url 'donor_panel' %}"><i class="fa fa-edit fa-fw"></i> Donors</a>
                     </li>
 
                 </ul>
