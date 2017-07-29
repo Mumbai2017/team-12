@@ -35,6 +35,8 @@ public class ReferredList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<ReferredData> arraylist = new ArrayList<>();
+    String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+    int flag=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +72,10 @@ public class ReferredList extends AppCompatActivity {
 
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
-                                BigInteger bigInteger = (BigInteger) jsoNobject.get("phone");
+                                BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
 
-                                ReferredData referredData = new ReferredData(jsoNobject.getString("name"),
-                                        jsoNobject.getString("address"),
+                                ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
+                                        jsoNobject.getString("hospital"),
                                         bigInteger);
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
@@ -100,7 +102,7 @@ public class ReferredList extends AppCompatActivity {
         //    arrayList2 = arrayList;
         //  Toast.makeText(context, "BAckgroud: " + arrayList.size(), Toast.LENGTH_SHORT).show();
         //   Toast.makeText(context, "BAckgroud2: " + arrayList2.size(), Toast.LENGTH_SHORT).show();
-        if (arrayList == null) {
+        if (arraylist == null) {
             Toast.makeText(getApplicationContext(), "null hai bhai", Toast.LENGTH_SHORT).show();
         }
 
@@ -110,11 +112,11 @@ public class ReferredList extends AppCompatActivity {
     public void onResponseRecieved() {
         // flag=1;
 
-        recyclerViewAdapter = new RecyclerViewAdapter(arrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setAdapter(recyclerViewAdapter);
         flag = 1;
 
-        Toast.makeText(getApplicationContext(), "Final :" + arrayList.size(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Final :" + arraylist.size(), Toast.LENGTH_SHORT).show();
         // return arrayList;
     }
 
