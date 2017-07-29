@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'googlecharts',
     'MakeAWish',
     'django.contrib.admin',
     'django.contrib.auth',
