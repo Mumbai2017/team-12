@@ -10,4 +10,6 @@ public class ReferredList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_referred_list);
     }
+
+    
 }
