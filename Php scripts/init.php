@@ -2,7 +2,7 @@
 $db="freeecom_cfg";
 $host="103.233.76.243";
 $password="worldmart123";
-$user="freecom_gps";
+$user="freeecom_gps";
 
 /*$user="root";
 $password="";
@@ -13,9 +13,9 @@ $host="localhost";*/
 $con=mysqli_connect($host,$user,$password,$db);
 
 if($con){
-//echo "Connection successful";
+echo "Connection successful";
 }else{
-	//echo "Error in conncetion";
+	echo "Error in conncetion";
 }
 
 ?>
