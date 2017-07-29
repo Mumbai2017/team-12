@@ -22,15 +22,9 @@ $idno='5';
 $hospital='hospital';*/
 
 
-//$lat="54";
-//$lon="1";
-
 $sql="insert into childprofile(wish1,wish2,wish3,bigwish1,bigwish2,bigwish3) values('$email','$password','$name','$area','$govtid','$idno','$hospital','0','0');";
 
-/*$sql="INSERT INTO `volunteer` ( `Name`, `Area`, `GovtID`, `IDno`, `Hospital`, `Approved`, `Points`) VALUES ( 'rr', 'rr', '22', '323', 'dfsdf', '0', '1');";*/
 
-
-/*$sql="insert into volunteer(IDno) values(5);";*/
 $response=array();
 
 if(mysqli_query($con,$sql)){
@@ -41,6 +35,15 @@ if(mysqli_query($con,$sql)){
 	$code="reg_fail";
 	$message="Registration Failed";
 }
+
+
+$sql = "select * from volunteer where hospital = ";
+
+
+$sql = "Update childprofile set vol_id=1 where id=1";
+
+
+
 array_push($response, array("code"=>$code,"message"=>$message));
 
 echo json_encode($response);
