@@ -39,8 +39,10 @@
                 android:hint="Email"
               />
 
-
         
+
+
+
 
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
