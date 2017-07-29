@@ -11,19 +11,23 @@ $hospital=$_POST['hospital'];*/
 $name='name';
 $area='area';
 $govtid='govtid';
-$idno='idno';
+$idno='5';
 $hospital='hospital';
 
 //$lat="54";
 //$lon="1";
 
-$sql="insert into volunteer(Name,Area,GovtID,IDno,Hospital,Approved,Points) values('name','$area','$govtid','$idno','$hospital','0','0');";
+//$sql="insert into volunteer(Volunteer_id,Name,Area,GovtID,IDno,Hospital,Approved,Points) values(1,'$name','$area','$govtid','$idno','$hospital',0,0);";
+
+
+$sql="insert into volunteer(name) values("rohit");";
 $response=array();
 
 if(mysqli_query($con,$sql)){
 	$code="reg_success";
 	$message="Registered Successfully";
 }else{
+	 
 	$code="reg_fail";
 	$message="Registration Failed";
 }
