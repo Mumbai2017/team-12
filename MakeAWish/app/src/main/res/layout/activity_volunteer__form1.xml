@@ -5,20 +5,20 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/aboutFamily"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/aboutFriends"
+            android:id="@+id/aboutFamily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="About Family"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/aboutFriends"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="About Friends"
@@ -81,7 +81,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:shrinkColumns="1"
-            android:stretchColumns="*"
+            android:stretchColumns="1"
             android:visibility="visible">
 
             <TableRow>
@@ -94,7 +94,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
-                    android:id="@+id/nameOFHospital"
+                    android:id="@+id/favColor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -167,18 +167,21 @@
 
             </TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hobby : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TableRow>
 
-            <EditText
-                android:id="@+id/hobby"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Hobby"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hobby : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/hobby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hobby"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
             <TableRow>
 
