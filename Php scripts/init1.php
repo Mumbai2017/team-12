@@ -1,8 +1,8 @@
 <?php
 $db="cfg";
-$host="54.254.135.31:80";
+$host="54.254.135.31";
 $password="root";
-$user="root";
+$user="force";
 
 /*$user="root";
 $password="";
