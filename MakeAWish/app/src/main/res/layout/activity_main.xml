@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.cfg.team12.makeawish.MainActivity">
 
     <info.hoang8f.widget.FButton
-    fbutton:buttonColor="@color/color_concrete"
-    fbutton:shadowColor="@color/color_asbestos"
-    fbutton:shadowEnabled="true"
-    fbutton:shadowHeight="5dp"
-    fbutton:cornerRadius="5dp"
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        fbutton:buttonColor="@color/fbutton_color_emerald"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/fbutton_color_green_sea"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp" />
 
-    />
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btn_refer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        fbutton:buttonColor="@color/fbutton_color_emerald"
+        fbutton:cornerRadius="5dp"
+        fbutton:shadowColor="@color/fbutton_color_green_sea"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp" />
 
 </android.support.constraint.ConstraintLayout>
