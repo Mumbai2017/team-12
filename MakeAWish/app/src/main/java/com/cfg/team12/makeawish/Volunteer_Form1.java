@@ -13,7 +13,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer__form1);
 
-        aboutFamily= (EditText) findViewById(R.id.aboutFamily);
+      /*  aboutFamily= (EditText) findViewById(R.id.aboutFamily);
         aboutFriends= (EditText) findViewById(R.id.aboutFriends);
         parentIdbtn = (RadioGroup) findViewById(R.id.parentId);
         parentId = parentIdbtn.getCheckedRadioButtonId();
@@ -41,7 +41,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
             String strtrip=trip.getText().toString();
             String strplan=.getText().toString();
 
-    }
+    }*/
 
     }
 }
