@@ -77,9 +77,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cfg',
-        'USER': 'rajat',
-        'PASSWORD': 'pass@123',
-        'HOST': 'localhost',
+        'USER': 'force',
+        'PASSWORD': 'root',
+        'HOST': '54.254.135.31',
         'PORT': '3306',
     }
     # 'default': {
