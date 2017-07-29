@@ -24,4 +24,4 @@ def doctor_panel(request):
 
 
 def donoe_panel(request):
-    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html')
+    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html', {'values': [['foo', 32], ['bar', 64], ['baz', 96]]})
