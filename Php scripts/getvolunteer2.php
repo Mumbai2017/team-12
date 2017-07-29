@@ -2,8 +2,8 @@
 
 require 'init.php';
 
-$user_id = "1";
-$date="2016-07-09 01:18:25";
+$name=$_POST['name'];
+$pass=$_POST['pass'];
 
 $sql="select * from volunteer where volunteer_id='1';";
 //echo $sql;

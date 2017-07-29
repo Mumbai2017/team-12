@@ -1,16 +1,28 @@
 package com.cfg.team12.makeawish;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.cfg.team12.makeawish.model.MySingleton;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
     String data[]=new String[]{"Donor","Volunteer"};
-
+    String url="http://freeecommercewebsite.in/Cfg/volunterrreg.php";
+    AlertDialog.Builder builder;
 
     @InjectView(com.cfg.team12.makeawish.R.id.input_email) EditText _emailText;
     @InjectView(com.cfg.team12.makeawish.R.id.input_password) EditText _passwordText;
@@ -53,8 +66,48 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        final String email = _emailText.getText().toString();
+        final String password = _passwordText.getText().toString();
 
+
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                builder.setTitle("Server Response");
+                builder.setMessage("Response"+response);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                        edtEmail.setText("");
+//                        edtPassword.setText("");
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(LoginActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> params=new HashMap<String, String>();
+                params.put("name",email);
+                params.put("pass",password);
+
+                // params.put("location",location2);
+                // params.put("hospital",)
+
+
+                return params;
+            }
+        };
+        MySingleton.getmInstance(LoginActivity.this).addToRequestQueue(stringRequest);
     }
+
+
 }

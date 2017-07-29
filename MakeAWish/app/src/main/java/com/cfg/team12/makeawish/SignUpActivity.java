@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
     @InjectView(R.id.input_aadhar)EditText aadhar;
     @InjectView(R.id.input_city)EditText location;
     RadioGroup radioGroup;
+    String selection;
 
     String url="http://freeecommercewebsite.in/Cfg/volunterrreg.php";
     AlertDialog.Builder builder;
@@ -90,12 +92,20 @@ public class SignUpActivity extends AppCompatActivity {
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+                if(radioGroup.getCheckedRadioButtonId()!=-1){
+                    int id= radioGroup.getCheckedRadioButtonId();
+                    View radioButton = radioGroup.findViewById(id);
+                    int radioId = radioGroup.indexOfChild(radioButton);
+                    RadioButton btn = (RadioButton) radioGroup.getChildAt(radioId);
+                    selection = (String) btn.getText();
+                }
                 Map<String,String> params=new HashMap<String, String>();
                 params.put("name",email2);
                 params.put("area",location2);
                 params.put("idno",aadhar2);
                 params.put("password",password2);
                 params.put("email",email2);
+                params.put("govtid",selection);
                // params.put("location",location2);
                // params.put("hospital",)
 
