@@ -14,12 +14,36 @@ public class ReferredData {
     public String address;
     public BigInteger phone;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    String status;
+
+    public ReferredData(String name, String address, BigInteger phone,String status) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.status=status;
+    }
     public ReferredData(String name, String address, BigInteger phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.status=status;
     }
-
     public String getName() {
         return name;
     }

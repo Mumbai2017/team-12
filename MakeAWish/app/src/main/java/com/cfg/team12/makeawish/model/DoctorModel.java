@@ -10,6 +10,7 @@ public class DoctorModel {
     String hospital;
     String contactno;
 
+
     public DoctorModel(String childName, String hospital, String status,String contactno) {
         this.childName = childName;
         this.hospital = hospital;

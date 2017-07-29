@@ -24,14 +24,16 @@
             android:name=".VolunteerDashboardActivity"
             android:label="@string/title_activity_volunteer_dashboard"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Vouchers" />
+        <activity android:name=".DoctorDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Vouchers" />
-        <activity android:name=".DoctorDashboard"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,7 @@
 <?php
 require('init.php');
 
-$case_no=$_POST['case_no'];
+/*$case_no=$_POST['case_no'];
 $hospital=$_POST['hospital'];
 $child_name=$_POST['child_name'];
 $gender=$_POST['gender'];
@@ -9,10 +9,10 @@ $dob=$_POST['dob'];
 $contact_no=$_POST['contact_no'];
 $father_name=$_POST['father_name'];
 $mother_name=$_POST['mother_name'];
-$disease=$_POST['disease'];
+$disease=$_POST['disease'];*/
 
 
-/*$case_no="CSE11";
+$case_no="CSE11";
 $hospital="Dsrv";
 $child_name="Rahul";
 $gender="M";
@@ -20,7 +20,7 @@ $dob="1999-12-25";
 $contact_no=98767;
 $father_name="uejd";
 $mother_name="wejied";
-$disease="cdi dowd";*/
+$disease="cdi dowd";
 
 
 $sql="insert into childprofile(case_no,hospital,child_name,sex,dob,contact_no,father_name,mother_name,disease) values('$case_no','$hospital','$child_name','$gender','$dob','$contact_no','$father_name','$mother_name','$disease');";

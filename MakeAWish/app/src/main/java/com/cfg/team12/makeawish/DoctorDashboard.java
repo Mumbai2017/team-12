@@ -51,8 +51,11 @@ public class DoctorDashboard extends AppCompatActivity {
         BigInteger bigInteger = new BigInteger("543534535");*/
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        //  arraylist.add(doctorModel);
-        // RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
+        DoctorModel doctorModel = new DoctorModel("name",
+                "hospital", "status",
+                "contact_no");
+         arraylist.add(doctorModel);
+         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
@@ -185,7 +188,7 @@ public class DoctorDashboard extends AppCompatActivity {
 
         public RecyclerViewHolder(View itemView, final Context context) {
             super(itemView);
-            txtName = (TextView) itemView.findViewById(R.id.txt_name);
+            txtName = (TextView) itemView.findViewById(R.id.childsName);
 
             txtHospital = (TextView) itemView.findViewById(R.id.nameOFHospital);
             txtContact = (TextView) itemView.findViewById(R.id.contact);

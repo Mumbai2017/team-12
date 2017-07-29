@@ -46,8 +46,8 @@ public class ReferredList extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<ReferredData> data = new ArrayList<>();
         BigInteger bigInteger = new BigInteger("543534535");
-        ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        data.add(referredData);
+       // ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
+      //  data.add(referredData);
         /*RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());

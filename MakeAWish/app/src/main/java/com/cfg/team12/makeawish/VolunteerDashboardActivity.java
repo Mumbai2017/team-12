@@ -69,7 +69,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<ReferredData> data = new ArrayList<>();
         BigInteger bigInteger = new BigInteger("543534535");
-        ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
+        ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger,"sdfs");
         data.add(referredData);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setHasFixedSize(true);
@@ -78,7 +78,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-getList();
+        getList();
         recyclerViewAdapter.notifyDataSetChanged();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -104,11 +104,10 @@ getList();
 
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
-                                BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
-
+                                BigInteger bigInteger = BigInteger.valueOf(435535);
+                                Toast.makeText(VolunteerDashboardActivity.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
                                 ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
-                                        jsoNobject.getString("hospital"),
-                                        bigInteger);
+                                       jsoNobject.getString("hospital"),   bigInteger,jsoNobject.getString("status"));
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
                                 arraylist.add(referredData);
@@ -129,7 +128,7 @@ getList();
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), "" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
