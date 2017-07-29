@@ -68,9 +68,9 @@ public class DoctorDashboard extends AppCompatActivity {
     }
 
     public synchronized void getList() {
-
+int id=1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
                 new Response.Listener<org.json.JSONArray>() {
 
                     @Override
