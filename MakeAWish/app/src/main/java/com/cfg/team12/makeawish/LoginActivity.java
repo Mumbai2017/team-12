@@ -1,6 +1,7 @@
 package com.cfg.team12.makeawish;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,12 +32,14 @@ import info.hoang8f.widget.FButton;
 public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
-    String data[]=new String[]{"Donor","Volunteer"};
-    String url="http://freeecommercewebsite.in/Cfg/volunterrreg.php";
+    String data[] = new String[]{"Donor", "Volunteer"};
+    String url = "http://freeecommercewebsite.in/Cfg/volunterrreg.php";
     AlertDialog.Builder builder;
 
-    @InjectView(com.cfg.team12.makeawish.R.id.input_email) EditText _emailText;
-    @InjectView(com.cfg.team12.makeawish.R.id.input_password) EditText _passwordText;
+    @InjectView(com.cfg.team12.makeawish.R.id.input_email)
+    EditText _emailText;
+    @InjectView(com.cfg.team12.makeawish.R.id.input_password)
+    EditText _passwordText;
     @InjectView(R.id.btn_login)
     FButton loginButton;
     @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
@@ -49,17 +52,17 @@ public class LoginActivity extends AppCompatActivity {
 
         ButterKnife.inject(this);
 
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,data);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
 
-        stakeholder=(Spinner)findViewById(R.id.spinner_select);
+        stakeholder = (Spinner) findViewById(R.id.spinner_select);
         stakeholder.setAdapter(arrayAdapter);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-            login();
-               // Toast.makeText(mContext, "Hello moto!", Toast.LENGTH_SHORT).show();
+                login();
+                // Toast.makeText(mContext, "Hello moto!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,34 +73,41 @@ public class LoginActivity extends AppCompatActivity {
         final String password = _passwordText.getText().toString();
 
 
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                builder.setTitle("Server Response");
-                builder.setMessage("Response"+response);
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+
+
+                if (response.equals("Login success")) {
+                    startActivity(new Intent(LoginActivity.this, ReferActivity.class));
+                } else {
+                    builder.setTitle("Server Response");
+
+                    builder.setMessage("Response" + response);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 //                        edtEmail.setText("");
 //                        edtPassword.setText("");
-                    }
-                });
-                AlertDialog alertDialog=builder.create();
-                alertDialog.show();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LoginActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params=new HashMap<String, String>();
-                params.put("name",email);
-                params.put("pass",password);
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("name", email);
+                params.put("pass", password);
 
                 // params.put("location",location2);
                 // params.put("hospital",)
