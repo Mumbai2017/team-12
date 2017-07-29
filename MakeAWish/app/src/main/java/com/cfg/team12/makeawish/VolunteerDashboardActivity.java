@@ -23,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -35,6 +36,8 @@ import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class VolunteerDashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -126,7 +129,21 @@ getList();
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), "" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", "1");
+                //  params.put("pass", password);
+
+                // params.put("location",location2);
+                // params.put("hospital",)
+
+
+                return params;
+            }
+        };
         MySingleton.getmInstance(getApplicationContext()).addToRequestQueue(jsonArrayRequest);
         //    arrayList2 = arrayList;
         //  Toast.makeText(context, "BAckgroud: " + arrayList.size(), Toast.LENGTH_SHORT).show();
