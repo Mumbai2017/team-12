@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/auto" />
+            android:src="@drawable/charityy" />
 
         <TextView
             android:layout_width="wrap_content"
