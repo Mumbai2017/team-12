@@ -15,7 +15,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.cfg.team12.makeawish.model.MySingleton;
 import com.cfg.team12.makeawish.model.ReferredData;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -26,6 +34,7 @@ public class ReferredList extends AppCompatActivity {
     //for displaying data in card view
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
+    ArrayList<ReferredData> arraylist = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +64,63 @@ public class ReferredList extends AppCompatActivity {
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
-    private void getJSONdata() {
+    public synchronized void getList() {
+
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
+                new Response.Listener<org.json.JSONArray>() {
+                    @Override
+                    public void onResponse(org.json.JSONArray response) {
+                        int count = 0;
+                        while (count < response.length()) {
+
+
+                            try {
+                                JSONObject jsoNobject = response.getJSONObject(count);
+                                //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
+                                arrayList.add(contact);
+
+                                //  Toast.makeText(context, count + " - count," + arrayList.get(0), Toast.LENGTH_SHORT).show();
+                                count++;
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        if(count==response.length()){
+                            Toast.makeText(getApplicationContext(), "response() :" , Toast.LENGTH_SHORT).show();
+                            onResponseRecieved();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "" + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        MySingleton.getmInstance(getApplicationContext()).addToRequestQueue(jsonArrayRequest);
+        //    arrayList2 = arrayList;
+        //  Toast.makeText(context, "BAckgroud: " + arrayList.size(), Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(context, "BAckgroud2: " + arrayList2.size(), Toast.LENGTH_SHORT).show();
+        if (arrayList == null) {
+            Toast.makeText(getApplicationContext(), "null hai bhai", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
+
+    public void onResponseRecieved() {
+        // flag=1;
+
+        recyclerViewAdapter = new RecyclerViewAdapter(arrayList);
+        recyclerView.setAdapter(recyclerViewAdapter);
+        flag=1;
+
+        Toast.makeText(getApplicationContext(), "Final :" + arrayList.size(), Toast.LENGTH_SHORT).show();
+        // return arrayList;
+    }
+
+
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
