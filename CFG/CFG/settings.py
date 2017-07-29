@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'cfg',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '54.254.135.31',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
     # 'default': {
