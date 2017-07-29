@@ -50,6 +50,33 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Element');
+      data.addColumn('number', 'Percentage');
+      data.addRows([
+        ['Nitrogen', 0.78],
+        ['Oxygen', 0.21],
+        ['Other', 0.01]
+      ]);
+
+      // Set chart options
+      var options = {'title':'How Much Pizza I Ate Last Night',
+                     'width':500,
+                     'height':400};
+
+      // Instantiate and draw the chart.
+      var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
+      chart.draw(data, options);
+    }
+
+
+    </script>
 </head>
 
 <body>
@@ -192,7 +219,10 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                                <div class="flot-chart-content" id="flot-pie-chart">
+                                    <!-- Identify where the chart should be drawn. -->
+                                    <!--<div id="myPieChart" style="width:700; height:700"/>-->
+                                </div>
                             </div>
                         </div>
                         <!-- /.panel-body -->
@@ -224,49 +254,28 @@
 
     </div>
 
-    {% load googlecharts %}
-    {# container #}
-    <div id="out"></div>
-    {% googlecharts %}
-    {# named data and options can be reused #}
-    {% data values "out_data" %}
-    {% col "string" "Name" %}"{{ val }}"{% endcol %}
-    {% col "number" "Value" %}{{ val }}{% endcol %}
-    {% enddata %}
-    {# you can also use global javascript variables here, #}
-    {# and call functions #}
-    {% options "out_options" %}
-    kind: "PieChart",
-    options: {
-    width: 300,
-    height: 240
-    }
-    {% endoptions %}
-    {# chart is assembled from container, data and options #}
-    {% graph "out" "out_data" "out_options" %}
-    {% endgooglecharts %}
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{%static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="{%static vendor/metisMenu/metisMenu.min.js%}"></script>
 
     <!-- Flot Charts JavaScript -->
-    <script src="../vendor/flot/excanvas.min.js"></script>
-    <script src="../vendor/flot/jquery.flot.js"></script>
-    <script src="../vendor/flot/jquery.flot.pie.js"></script>
-    <script src="../vendor/flot/jquery.flot.resize.js"></script>
-    <script src="../vendor/flot/jquery.flot.time.js"></script>
-    <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-    <script src="../data/flot-data.js"></script>
+    <script src="{%static vendor/flot/excanvas.min.js%}"></script>
+    <script src="{%static vendor/flot/jquery.flot.js%}"></script>
+    <script src="{%static vendor/flot/jquery.flot.pie.js%}"></script>
+    <script src="{%static vendor/flot/jquery.flot.resize.js%}"></script>
+    <script src="{%static vendor/flot/jquery.flot.time.js%}"></script>
+    <script src="{%static vendor/flot-tooltip/jquery.flot.tooltip.min.js%}"></script>
+    <script src="{%static data/flot-data.js%}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="{%static dist/js/sb-admin-2.js%}"></script>
 
 </body>
 
