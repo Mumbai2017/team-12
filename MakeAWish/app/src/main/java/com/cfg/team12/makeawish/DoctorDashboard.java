@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -26,14 +27,16 @@ import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DoctorDashboard extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
-    private VolunteerDashboardActivity.RecyclerViewAdapter recyclerViewAdapter;
+    private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<DoctorModel> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+    String url = "http://freeecommercewebsite.in/Cfg/doctorRecycler.php";
     public static int flag = 11;
     public static String childName = "";
 
@@ -48,14 +51,14 @@ public class DoctorDashboard extends AppCompatActivity {
         BigInteger bigInteger = new BigInteger("543534535");*/
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-       arraylist.add(doctorModel);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
+        //  arraylist.add(doctorModel);
+        // RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
-
+        getList();
 
         recyclerViewAdapter.notifyDataSetChanged();
     }
@@ -75,8 +78,9 @@ public class DoctorDashboard extends AppCompatActivity {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
 
-                                DoctorModel doctorModel=new DoctorModel(jsoNobject.getString("child_name"),
-                                        jsoNobject.getString("hospital"),jsoNobject.getString("status"));
+                                DoctorModel doctorModel = new DoctorModel(jsoNobject.getString("name"),
+                                        jsoNobject.getString("hospital"), jsoNobject.getString("status"),
+                                        jsoNobject.getString("contact_no"));
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
                                         bigInteger);*/
@@ -100,7 +104,21 @@ public class DoctorDashboard extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), "" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", "1");
+                //  params.put("pass", password);
+
+                // params.put("location",location2);
+                // params.put("hospital",)
+
+
+                return params;
+            }
+        };
         MySingleton.getmInstance(getApplicationContext()).addToRequestQueue(jsonArrayRequest);
         //    arrayList2 = arrayList;
         //  Toast.makeText(context, "BAckgroud: " + arrayList.size(), Toast.LENGTH_SHORT).show();
@@ -115,7 +133,7 @@ public class DoctorDashboard extends AppCompatActivity {
     public void onResponseRecieved() {
         // flag=1;
 
-        recyclerViewAdapter = new VolunteerDashboardActivity.RecyclerViewAdapter(arraylist);
+        recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setAdapter(recyclerViewAdapter);
         flag = 1;
 
@@ -144,11 +162,11 @@ public class DoctorDashboard extends AppCompatActivity {
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
             DoctorModel rf = referredDatas.get(position);
-           // Toast.makeText(DoctorDashboard.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(DoctorDashboard.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
             holder.txtHospital.setText(referredDatas.get(position).getHospital());
             holder.txtName.setText(referredDatas.get(position).getChildName());
-           holder.txtContact.setText(referredDatas.get(position).getStatus());
-          //  holder.id = referredDatas.get(position).id;
+            holder.txtContact.setText(referredDatas.get(position).getStatus());
+            //  holder.id = referredDatas.get(position).id;
 
         }
 

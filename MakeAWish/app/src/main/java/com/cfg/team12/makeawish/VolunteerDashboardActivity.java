@@ -42,7 +42,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<ReferredData> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+    String url = "http://freeecommercewebsite.in/Cfg/getchildfromvolid.php";
     public static int flag = 11;
     public static String childName = "";
 
@@ -75,7 +75,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-
+getList();
         recyclerViewAdapter.notifyDataSetChanged();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

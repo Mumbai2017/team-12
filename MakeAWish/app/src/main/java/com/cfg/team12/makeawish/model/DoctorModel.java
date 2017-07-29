@@ -8,11 +8,13 @@ public class DoctorModel {
 
     String childName;
     String hospital;
+    String contactno;
 
-    public DoctorModel(String childName, String hospital, String status) {
+    public DoctorModel(String childName, String hospital, String status,String contactno) {
         this.childName = childName;
         this.hospital = hospital;
         this.status = status;
+        this.contactno=contactno;
     }
 
     public String getChildName() {
