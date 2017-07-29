@@ -21,7 +21,7 @@
     </group>-->
 
    <!-- <item android:title="Communicate">-->
-        <menu>
+
             <item
                 android:id="@+id/nav_dash"
                 android:icon="@drawable/ic_menu_share"
@@ -34,7 +34,7 @@
                 android:id="@+id/nav_refer"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Refer" />
-        </menu>
+        
    <!-- </item>-->
 
 </menu>

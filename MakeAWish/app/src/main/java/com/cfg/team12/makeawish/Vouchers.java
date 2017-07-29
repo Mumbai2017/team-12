@@ -45,7 +45,7 @@ public class Vouchers extends AppCompatActivity {
         bigInteger = new BigInteger("543534535");
         referredData = new ReferredData("BookMyShow", "Get 20% off!*", bigInteger);
         data.add(referredData);
-        VolunteerDashboardActivity.RecyclerViewAdapter recyclerViewAdapter = new VolunteerDashboardActivity.RecyclerViewAdapter(data);
+       RecyclerViewAdapter2 recyclerViewAdapter = new RecyclerViewAdapter2(data);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
@@ -53,30 +53,30 @@ public class Vouchers extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
-    class RecyclerViewAdapter extends RecyclerView.Adapter<VolunteerDashboardActivity.RecyclerViewHolder> {
+    class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewHolder2> {
 
         ArrayList<ReferredData> referredDatas = new ArrayList<>();
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
 
 
-        RecyclerViewAdapter(ArrayList<ReferredData> referredDataArrayList) {
+        RecyclerViewAdapter2(ArrayList<ReferredData> referredDataArrayList) {
             referredDatas = referredDataArrayList;
 
         }
 
         @Override
-        public VolunteerDashboardActivity.RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public RecyclerViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_referral, parent, false);
-            return new VolunteerDashboardActivity.RecyclerViewHolder(view, parent.getContext());
+            return new RecyclerViewHolder2(view, parent.getContext());
         }
 
         @Override
-        public void onBindViewHolder(VolunteerDashboardActivity.RecyclerViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerViewHolder2 holder, int position) {
 
             ReferredData rf = referredDatas.get(position);
-            Toast.makeText(VolunteerDashboardActivity.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(Vouchers.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
-            holder.txtName.setText(referredDatas.get(position).getAddress());
+            holder.txtName.setText(referredDatas.get(position).getName());
             BigInteger number = referredDatas.get(position).getPhone();
 
 
@@ -89,12 +89,12 @@ public class Vouchers extends AppCompatActivity {
         }
     }
 
-    class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    class RecyclerViewHolder2 extends RecyclerView.ViewHolder {
 
         protected TextView txtName, txtAddress;
         protected ImageView imageView;
 
-        public RecyclerViewHolder(View itemView, final Context context) {
+        public RecyclerViewHolder2(View itemView, final Context context) {
             super(itemView);
             txtName = (TextView) itemView.findViewById(R.id.txt_name);
 
