@@ -7,6 +7,7 @@ from CFG.settings import TEMPLATE_PATH, STATIC_URL
 # Create your views here.
 
 def admin_panel(request):
+    
     return render(request, TEMPLATE_PATH + '/MakeAWish/index.html')
 
 
