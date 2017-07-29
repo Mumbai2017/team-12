@@ -42,7 +42,12 @@ public class VolunterData extends AppCompatActivity {
     }
 
     private void register() {
-      
+        String strwish1=wish1.getText().toString();
+        String strwish2=wish2.getText().toString();
+        String strwish3=wish3.getText().toString();
+        String strwishdes1=wishdes1.getText().toString();
+        String strwishdes2=wishdes2.getText().toString();
+        String strwishdes3=wishdes3.getText().toString();
 
     }
 }
