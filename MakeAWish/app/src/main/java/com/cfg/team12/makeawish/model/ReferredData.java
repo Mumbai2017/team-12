@@ -9,7 +9,13 @@ public class ReferredData {
 
     public String name;
     public String address;
-    public Integer phone;
+    public String phone;
+
+    public ReferredData(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
 
     public String getName() {
         return name;
@@ -28,11 +34,11 @@ public class ReferredData {
         this.address = address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

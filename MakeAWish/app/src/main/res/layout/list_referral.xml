@@ -23,7 +23,7 @@
         >
 
         <TextView
-            android:id="@+id/txt_date"
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -36,10 +36,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txt_weather"
+            android:id="@+id/txt_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_date"
+            android:layout_below="@id/txt_name"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
 
