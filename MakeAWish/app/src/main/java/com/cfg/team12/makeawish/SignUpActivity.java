@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import info.hoang8f.widget.FButton;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     @InjectView(R.id.btn_signup)
-    Button signUpButton;
+    FButton signUpButton;
     @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
     TextView _signupLink;
 

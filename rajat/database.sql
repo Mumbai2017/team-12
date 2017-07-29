@@ -49,3 +49,12 @@ hosptal varchar(20),
 status boolean,
 points int
 );
+
+create table donor(
+don_id int primary key,
+name varchar(20),
+email varchar(20),
+ph_no bigint,
+points int,
+amt int
+);
