@@ -1,0 +1,76 @@
+{% load static %}
+{% load bootstrap %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Catamaran|Orbitron" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Catamaran|Orbitron|Yatra+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Catamaran|Orbitron|Yatra+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+<title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-image: url("{% static 'bg.jpg' %}");
+        }
+        form>div{
+            width:50%;
+        }
+        form label{
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="first">
+<br><br>
+<div>
+<h2 style="width:30%; margin:0 140px; color:white; font-family: 'Orbitron', sans-serif;
+font-family: 'Catamaran', sans-serif;" align="center" > Login </h2>
+
+
+
+        <form method="POST">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+
+            <div align="center">
+  <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+  </div>
+
+
+    </form>
+
+    </div>
+<br>
+       <br>
+       <br>
+       <br>
+       <br>
+ <div style="margin-left:120px; color:white; font-size: 28px;
+font-family: 'Merriweather', serif;">
+"If you can't feed a hundred people,<br> then feed just one."- Mother Teresa
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+{% load static %}
+{% load bootstrap %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'jquery-3.1.1.min.js' %}"></script>
+
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+    <link href="{% static 'ngo.css' %}"  rel="stylesheet">
+    <link href="{% static 'bootstrap.min.css' %}"  rel="stylesheet">
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var marker;
+
+
+            var map = new google.maps.Map(document.getElementById('map_canvas'), {
+    zoom: 11,
+    center: new google.maps.LatLng(19.10,72.83),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+});
+            {% for ngo in ngo2 %}
+ marker = new google.maps.Marker({
+    position: new google.maps.LatLng({{ ngo.lat }}, {{ ngo.long }}),
+    map : map,
+    draggable: false,
+     label:'{{ ngo.name }}',
+
+});
+            {% endfor %}
+{% for ngo in ngo1 %}
+ marker = new google.maps.Marker({
+    position: new google.maps.LatLng({{ ngo.lat }}, {{ ngo.long }}),
+    map : map,
+    draggable: false,
+     label:'{{ ngo.name }}',
+
+});
+            {% endfor %}
+
+{% for ngo in ngo3 %}
+ marker = new google.maps.Marker({
+    position: new google.maps.LatLng({{ ngo.lat }}, {{ ngo.long }}),
+    map : map,
+    draggable: false,
+     label:'{{ ngo.name }}',
+
+});
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+        });
+
+
+    </script>
+<style>
+    
+    
+    .nav>li>a{
+        color: #bdc3c7;
+        font-size: 18px;
+        text-align: center;
+    }
+    hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #333;
+    width:97%;
+}
+    .card{
+        background-color: white;
+    }
+    body{
+        background-color: #34495e;
+    }
+    .nav-sidebar{
+
+    }
+</style>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-md-12" >
+        <div id="map_canvas" style="height:400px;"></div>
+
+    </div>
+
+</div>
+<div class="row" style="">
+    <div class="col-md-3" style="background-color:#34495e;margin-top:40px;">
+        <ul class="nav nav-sidebar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/faq">FAQ</a></li>
+
+
+          </ul>
+
+    </div>
+    <div class="col-md-9" style="background-color: #eee;padding-top:20px">
+
+        <div class="row" style="padding-top:20px">
+            <h4 style="margin-left:20px">{{ user.get_pref1_display }}</h4>
+            <hr>
+            {% for ngo in ngo1 %}
+            <div class="col-md-3">
+
+                <div class="card" style="box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+
+    <!--Card image-->
+    <img class="img-responsive" src="http://mdbootstrap.com/images/regular/nature/img%20(28).jpg" alt="Card image cap">
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block" style="height:340px;">
+        <!--Title-->
+        <h4 class="card-title" style="padding: 20px 20px 20px 20px;">{{ ngo.name }}</h4>
+        <!--Text-->
+        <p class="card-text" style="padding: 20px 20px 20px 20px;">{{ ngo.about }}</p>
+        <form method="POST">
+            {% csrf_token %}
+
+            <input name="mail" type="hidden" value="{{ ngo.mail }}">
+
+        <button style="margin:20px 80px;width: 60px;position: absolute;
+  bottom: 0;" type="submit"  class="btn btn-primary">Join</button>
+            </form>
+    </div>
+
+    <!--/.Card content-->
+
+</div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+        <div class="row" style="padding-top:20px">
+         <h4 style="margin-left:20px">{{ user.get_pref2_display }}</h4>
+            <hr>
+            {% for ngo in ngo2 %}
+            <div class="col-md-3">
+
+                <div class="card" style="box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+
+    <!--Card image-->
+    <img class="img-responsive" src="http://mdbootstrap.com/images/regular/nature/img%20(28).jpg" alt="Card image cap">
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title" style="padding: 20px 20px 20px 20px;">{{ ngo.name }}</h4>
+        <!--Text-->
+        <p class="card-text" style="padding: 20px 20px 20px 20px;">{{ ngo.about }}</p>
+        <form method="POST">
+            {% csrf_token %}
+
+            <input name="mail" type="hidden" value="{{ ngo.mail }}">
+
+        <button style="margin:20px 80px;width: 60px;" type="submit"  class="btn btn-primary">Join</button>
+            </form>
+    </div>
+    <!--/.Card content-->
+
+</div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+        <div class="row" style="padding-top:20px">
+         <h4 style="margin-left:20px">{{ user.get_pref3_display }}</h4>
+            <hr>
+            {% for ngo in ngo3 %}
+            <div class="col-md-3">
+
+                <div class="card" style="box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+
+    <!--Card image-->
+    <img class="img-responsive" src="http://mdbootstrap.com/images/regular/nature/img%20(28).jpg" alt="Card image cap">
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title" style="padding: 20px 20px 20px 20px;">{{ ngo.name }}</h4>
+        <!--Text-->
+        <p class="card-text" style="padding: 20px 20px 20px 20px;">{{ ngo.about }}</p>
+        <form method="POST">
+            {% csrf_token %}
+
+            <input name="mail" type="hidden" value="{{ ngo.mail }}">
+
+        <button style="margin:20px 80px;width: 60px;" type="submit"  class="btn btn-primary">Join</button>
+            </form>
+    </div>
+    <!--/.Card content-->
+
+</div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

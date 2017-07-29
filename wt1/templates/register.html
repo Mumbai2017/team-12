@@ -1,0 +1,150 @@
+{% load static %}
+{% load bootstrap %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'jquery-3.1.1.min.js' %}"></script>
+
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+    <link href="{% static 'ngo.css' %}"  rel="stylesheet">
+    <link href="{% static 'bootstrap.min.css' %}"  rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script>
+        var latitude;
+            var longitude;
+
+        $(document).ready(function () {
+
+
+            if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log(latitude)
+            var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(latitude, longitude),
+    map : map,
+    draggable: true
+});  $("#id_lat").val(marker.getPosition().lat().toFixed(5));
+        $("#id_long").val(marker.getPosition().lng().toFixed(5));
+        });
+    }
+
+
+            var map = new google.maps.Map(document.getElementById('map_canvas'), {
+    zoom: 11,
+    center: new google.maps.LatLng(19.10,72.83),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+});
+
+ var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(latitude, longitude),
+    map : map,
+    draggable: true
+});
+
+
+
+    google.maps.event.addListener(marker, 'dragend', function(marker) {
+        var latLng = marker.latLng;
+
+        currentLatitude = latLng.lat().toFixed(5);
+        currentLongitude = latLng.lng().toFixed(5);
+        $("#id_lat").val(currentLatitude);
+        $("#id_long").val(currentLongitude);
+
+
+    });
+
+
+
+
+
+
+        });
+
+
+    </script>
+
+    <style>
+
+        #map_canvas {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+}
+        .form {
+  position: relative;
+  z-index: 1; /* The z-index should be higher than Google Maps */
+  width: 550px;
+  margin: 0px 100px;
+  padding: 10px;
+
+  height: 600px;
+            overflow-x:hidden;
+
+  opacity:0.8; /* Set the opacity for a slightly transparent Google Form */
+  color: white;
+}
+
+    </style>
+
+
+</head>
+<body>
+
+
+
+            <div id="map_canvas">
+
+        </div>
+<div class="form">
+
+    <h3>Registration</h3>
+    <hr>
+
+
+
+
+        <form method="POST">
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.email|bootstrap }}
+                    {{ form.password|bootstrap }}
+                    {{ form.phone_number|bootstrap }}
+                    {{ form.professions|bootstrap }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.age|bootstrap }}
+                    {{ form.pref1|bootstrap }}
+                    {{ form.pref2|bootstrap }}
+                    {{ form.pref3|bootstrap }}
+                    {{ form.lat}}
+                    {{ form.long}}
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-success">Register</button>
+
+
+    </form>
+
+</div>
+
+
+
+
+</body>
+
+</html>

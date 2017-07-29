@@ -1,0 +1,272 @@
+{% load static %}
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style type="text/css">
+	body {
+  margin: 0;
+  background: #000; 
+}
+
+.navbar{
+	background-color: transparent;
+	border:none;
+  background-color: transparent;
+
+
+}
+
+.navbar a{
+	color: white;
+		font-size: 25px;
+	font-weight: 100;
+}
+
+.mask{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  -webkit-filter: blur(2px);
+  overflow: hidden;
+}
+
+
+/* for video */
+video { 
+    position: fixed;
+    -webkit-filter:brightness(0.4);
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+#polina { 
+  font-family: 'Lato', sans-serif;
+  font-size: 50px;
+
+  color: white;
+  padding: 2rem;
+  width: 100%;
+  margin:100px auto;
+ 
+
+}
+h1 {
+
+	font-size: 130px;
+  text-align: center;
+
+}
+#polina button {
+font-family: 'Lato', sans-serif;
+  display: block;
+  width: 150px;
+  height: 80px;
+  padding: .4rem;
+  border: solid 1px white; 
+  margin: 40 auto; 
+  font-size: 30px;
+  background: transparent;
+  color: white;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .5s background;
+}
+#polina button:hover { 
+font-family: 'Lato', sans-serif;
+  display: block;
+
+  padding: .4rem;
+  border: solid 1px white; 
+ 
+
+  background-color: white;
+
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .5s background;
+}
+
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+
+  padding: .5rem;
+  transition: .6s background;
+
+}
+
+
+
+/* for typewrite */
+
+.typewrite{
+	padding: 0px;
+}
+
+
+
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" style="color:#2ecc71" href="#">Rosharo</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <li ><a style="color: white;"href="/faq">FAQs</a></li>
+        <li><a style="color: white;" href="/profile">Profile</a></li>
+        
+        
+      </ul>
+   
+      <ul class="nav navbar-nav navbar-right">
+          {% if request.user.is_authenticated %}
+        <li><a href="/logout" style="color:#e74c3c;">Log Out</a></li>
+          {% else %}
+          <li><a href="/login" style="color:#e74c3c;">Log In</a></li>
+          {% endif %}
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay  loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+
+<source src="{% static 'mva.mp4' %}" type="video/mp4">
+</video>
+<div id="polina">
+<h1>
+	They need
+  <a href="" class="typewrite" data-period="2000" data-type='[ "Doctors.", "Teachers.", "Engineers.","You." ]'>
+
+    <span class="wrap"></span>
+  </a>
+</h1>
+
+    {% if request.user.is_authenticated %}
+
+          {% else %}
+     <button>   <a href="/register">Join Us!</a></button>
+
+          {% endif %}
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+
+
+//For the typewriter
+
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = period;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        if(fullTxt == 'Doctors.'){
+        	this.el.innerHTML = '<span class="wrap" style="color:#2ecc71">'+this.txt+'</span>';
+
+        }
+        else if(fullTxt == 'Teachers.'){
+        	this.el.innerHTML = '<span class="wrap" style="color:#e74c3c">'+this.txt+'</span>';
+
+        }
+        else if(fullTxt == 'Engineers.'){
+        	this.el.innerHTML = '<span class="wrap" style="color:#1dcfac">'+this.txt+'</span>';
+
+        }
+        else{
+        	this.el.innerHTML = '<span class="wrap" style="color:#8e44ad">'+this.txt+'</span>';
+
+        }
+
+        
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+
+            }
+        }
+
+        
+    };
+
+</script>
+</html>
