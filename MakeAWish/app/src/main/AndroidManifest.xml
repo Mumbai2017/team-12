@@ -11,16 +11,12 @@
         android:roundIcon="@mipmap/weblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".DonorActivity" />
         <activity android:name=".ReferActivity" />
-        <activity android:name=".ReferredList">
-
-        </activity>
+        <activity android:name=".ReferredList"></activity>
         <activity android:name=".VolunterData" />
         <activity android:name=".Volunteer_Form1" />
         <activity android:name=".StaffActivity" />
@@ -34,6 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Vouchers"></activity>
     </application>
 
 </manifest>

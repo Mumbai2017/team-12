@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:clipToPadding="false"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="3dp"
+    card_view:cardUseCompatPadding="true">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rel_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <ImageView
+            android:id="@+id/img_dash"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/img_dash"
+            android:layout_marginTop="15dp"
+            android:gravity="right"
+            android:text="Rohit Singh"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/img_dash"
+            android:gravity="right"
+            android:text="Mumbai"
+
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+
+
+        <!--   <TextView
+               android:id="@+id/txt_temp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentRight="true"
+               android:layout_below="@+id/txt_date"
+               android:layout_marginBottom="10dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:gravity="center"
+               android:text="80*"
+               android:textSize="22sp"
+               android:textStyle="bold" />-->
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btn_signup"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="Create Account"
+            fbutton:buttonColor="@color/fbutton_color_emerald"
+            fbutton:cornerRadius="5dp"
+            fbutton:shadowColor="@color/fbutton_color_green_sea"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -24,7 +24,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
-        android:textColor="20sp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Volunteer Dashboard"
        />
