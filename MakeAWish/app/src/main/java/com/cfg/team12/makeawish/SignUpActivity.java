@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
     @InjectView(R.id.input_name) EditText name;
     @InjectView(R.id.input_aadhar)EditText aadhar;
     @InjectView(R.id.input_city)EditText location;
+    RadioGroup radioGroup;
 
     String url="http://freeecommercewebsite.in/Cfg/volunterrreg.php";
     AlertDialog.Builder builder;
@@ -48,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         builder=new AlertDialog.Builder(SignUpActivity.this);
         ButterKnife.inject(this);
+       radioGroup = (RadioGroup) findViewById(R.id.radio);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
