@@ -20,12 +20,12 @@ public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
     String data[]=new String[]{"Donor","Volunteer"};
-    Button loginButton;
+
 
     @InjectView(com.cfg.team12.makeawish.R.id.input_email) EditText _emailText;
     @InjectView(com.cfg.team12.makeawish.R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_login)
-    FButton _loginButton;
+    FButton loginButton;
     @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
     TextView _signupLink;
 
