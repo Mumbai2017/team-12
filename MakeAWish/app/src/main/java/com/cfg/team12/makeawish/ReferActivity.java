@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import info.hoang8f.widget.FButton;
 
 public class ReferActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class ReferActivity extends AppCompatActivity {
 
 
     @InjectView(R.id.btn_login)
-    Button registerButton;
+    FButton registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

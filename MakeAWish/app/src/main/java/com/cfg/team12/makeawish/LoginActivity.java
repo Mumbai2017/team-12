@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import info.hoang8f.widget.FButton;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,7 +24,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @InjectView(com.cfg.team12.makeawish.R.id.input_email) EditText _emailText;
     @InjectView(com.cfg.team12.makeawish.R.id.input_password) EditText _passwordText;
-    @InjectView(com.cfg.team12.makeawish.R.id.btn_login)      Button _loginButton;
+    @InjectView(com.cfg.team12.makeawish.R.id.btn_login)
+    FButton _loginButton;
     @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
     TextView _signupLink;
 
