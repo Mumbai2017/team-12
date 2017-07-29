@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Intro Slider</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+
+    <string name="slide_1_title">Auto/Taxi Fare</string>
+    <string name="slide_1_desc">Calculate Fare based on Traffic and Night Charges!</string>
+
+    <string name="slide_2_title">Public Transport</string>
+    <string name="slide_2_desc">From Local Trains to BEST Buses, just tap to get the fare of each Transport Mode used in your Journey!      </string>
+
+    <string name="slide_3_title">Fitness Enthusiast?</string>
+    <string name="slide_3_desc">Calculate the Calories you burn, next time you take a walk to your workplace!</string>
+
+    <string name="slide_4_title">Choose the Best Option!</string>
+    <string name="slide_4_desc">Just key in the Source and Destination and compare each travel mode based on Fare, Time and Distance! </string>
+
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+</resources>

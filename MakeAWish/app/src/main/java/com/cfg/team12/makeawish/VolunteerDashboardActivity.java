@@ -1,15 +1,22 @@
 package com.cfg.team12.makeawish;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,28 +34,39 @@ import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class ReferredList extends AppCompatActivity {
+public class VolunteerDashboardActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-    //for displaying data in card view
     private RecyclerView recyclerView;
-  //  private RecyclerViewAdapter recyclerViewAdapter;
+    private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<ReferredData> arraylist = new ArrayList<>();
     String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
     int flag = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_referred_list);
+        setContentView(R.layout.volunteer_dashboard);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<ReferredData> data = new ArrayList<>();
         BigInteger bigInteger = new BigInteger("543534535");
         ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
         data.add(referredData);
-        /*RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
@@ -56,10 +74,18 @@ public class ReferredList extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
-        recyclerViewAdapter.notifyDataSetChanged();*/
+        recyclerViewAdapter.notifyDataSetChanged();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
-}
-/*
+
     public synchronized void getList() {
 
 
@@ -121,8 +147,64 @@ public class ReferredList extends AppCompatActivity {
         // return arrayList;
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
-    class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.volunteer_dashboard, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
         ArrayList<ReferredData> referredDatas = new ArrayList<>();
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
@@ -143,7 +225,7 @@ public class ReferredList extends AppCompatActivity {
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
             ReferredData rf = referredDatas.get(position);
-            Toast.makeText(ReferredList.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(VolunteerDashboardActivity.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
             holder.txtName.setText(referredDatas.get(position).getAddress());
             BigInteger number = referredDatas.get(position).getPhone();
@@ -156,8 +238,9 @@ public class ReferredList extends AppCompatActivity {
         public int getItemCount() {
             return referredDatas.size();
         }
+    }
 
-        *//*class RecyclerViewHolder extends RecyclerView.ViewHolder {
+        class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
             protected TextView txtName, txtAddress;
             protected ImageView imageView;
@@ -177,8 +260,7 @@ public class ReferredList extends AppCompatActivity {
                     }
                 });
 
-            }*//*
-        }*/
-
-
+            }
+        }
+    }
 
