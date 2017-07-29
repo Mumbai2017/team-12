@@ -1,0 +1,29 @@
+git clone https://www.git.....
+
+git status
+
+git add base.html
+
+git commit -m "Yo"
+
+git push
+
+You have to be inside test1 diectory when you're giving these commands
+
+git pull
+
+git add -a /// Add all 
+
+git branch // names of all branches
+
+git branch feature1// Copies all the code of the master, creates anew branch feature1 and places the code in feature1
+
+git checkout feauture1// You go inside feature1 // code changes on feature1 won't affect anytinh on master
+
+git checkout master// to go to master
+
+git merge master // to merge changes in branch to master
+
+push after merging into master
+
+
