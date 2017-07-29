@@ -14,7 +14,7 @@ $sql="select * from volunteer where email='$name' and password='$pass';";
 $res=mysqli_query($con,$sql);
 
 $response=array();
-while($row=mysqli_fetch_assoc($res)){
+if($row=mysqli_fetch_assoc($res)){
 
 	echo "Login success";
 }
