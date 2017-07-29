@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:padding="20dp"
+    android:orientation="vertical"
+
+    android:background="@color/colorPrimary"
     tools:context="com.cfg.team12.makeawish.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/weblogo" />
 
     <info.hoang8f.widget.FButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="Login"
         fbutton:buttonColor="@color/fbutton_color_emerald"
         fbutton:cornerRadius="5dp"
@@ -23,11 +35,11 @@
         android:id="@+id/btn_refer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Refer"
         fbutton:buttonColor="@color/fbutton_color_emerald"
         fbutton:cornerRadius="5dp"
         fbutton:shadowColor="@color/fbutton_color_green_sea"
         fbutton:shadowEnabled="true"
         fbutton:shadowHeight="5dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
