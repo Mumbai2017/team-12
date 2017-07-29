@@ -14,6 +14,7 @@ $wishType3=$_POST['wishtype3'];
 $wish3=$_POST['wish3'];
 $wish_desc3=$_POST['wish_desc3'];
 
+$_POST['id'];
 
 /*$name='name';
 $area='area';
@@ -21,9 +22,7 @@ $govtid='govtid';
 $idno='5';
 $hospital='hospital';*/
 
-
-$sql="insert into childprofile(wish1,wish2,wish3,bigwish1,bigwish2,bigwish3) values('$email','$password','$name','$area','$govtid','$idno','$hospital','0','0');";
-
+$sql = "UPDATE TABLE childprofile set wish1=".$wishType1.' '.$wish1.",wish2=".$wishType2.' '.$wish2.",wish3=".$wishType3.' '.$wish3.", bigwish1=".$wish_desc1.", bigwish2=".$wish_desc2.", bigwish3=".$wish_desc3." where id=".$id."; ";
 
 $response=array();
 
