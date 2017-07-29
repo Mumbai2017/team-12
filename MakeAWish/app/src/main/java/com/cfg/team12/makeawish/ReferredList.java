@@ -54,13 +54,6 @@ public class ReferredList extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
 
 
-
-        for (int i = 0; i < 5; i++) {
-            BigInteger bigInteger2 = new BigInteger("543534535");
-            ReferredData referredData2 = new ReferredData("Rohit", "Mumbai", bigInteger);
-            data.add(referredData2);
-
-        }
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
@@ -77,14 +70,14 @@ public class ReferredList extends AppCompatActivity {
 
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
-                                BigInteger bigInteger= (BigInteger) jsoNobject.get("phone");
+                                BigInteger bigInteger = (BigInteger) jsoNobject.get("phone");
 
-                                ReferredData referredData=new ReferredData(jsoNobject.getString("name"),
+                                ReferredData referredData = new ReferredData(jsoNobject.getString("name"),
                                         jsoNobject.getString("address"),
-                                        jsoNobject)
+                                        bigInteger);
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
-                                arraylist.add(contact);
+                                arraylist.add(referredData);
 
                                 //  Toast.makeText(context, count + " - count," + arrayList.get(0), Toast.LENGTH_SHORT).show();
                                 count++;
@@ -92,8 +85,8 @@ public class ReferredList extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-                        if(count==response.length()){
-                            Toast.makeText(getApplicationContext(), "response() :" , Toast.LENGTH_SHORT).show();
+                        if (count == response.length()) {
+                            Toast.makeText(getApplicationContext(), "response() :", Toast.LENGTH_SHORT).show();
                             onResponseRecieved();
                         }
                     }
@@ -119,12 +112,11 @@ public class ReferredList extends AppCompatActivity {
 
         recyclerViewAdapter = new RecyclerViewAdapter(arrayList);
         recyclerView.setAdapter(recyclerViewAdapter);
-        flag=1;
+        flag = 1;
 
         Toast.makeText(getApplicationContext(), "Final :" + arrayList.size(), Toast.LENGTH_SHORT).show();
         // return arrayList;
     }
-
 
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
@@ -147,8 +139,8 @@ public class ReferredList extends AppCompatActivity {
         @Override
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
-            ReferredData rf=referredDatas.get(position);
-            Toast.makeText(ReferredList.this, ""+rf.getName(), Toast.LENGTH_SHORT).show();
+            ReferredData rf = referredDatas.get(position);
+            Toast.makeText(ReferredList.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
             holder.txtName.setText(referredDatas.get(position).getAddress());
             BigInteger number = referredDatas.get(position).getPhone();
