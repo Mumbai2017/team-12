@@ -73,5 +73,8 @@ public class VolunterData extends AppCompatActivity {
         String strwishdes2=wishdes2.getText().toString();
         String strwishdes3=wishdes3.getText().toString();
 
+        String wish1type = s1.getSelectedItem().toString();
+        String wish2type = s2.getSelectedItem().toString();
+        String wish3type = s3.getSelectedItem().toString();
     }
 }
