@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,8 +55,8 @@ public class DoctorDashboard extends AppCompatActivity {
         DoctorModel doctorModel = new DoctorModel("name",
                 "hospital", "status",
                 "contact_no");
-         arraylist.add(doctorModel);
-         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
+        arraylist.add(doctorModel);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
@@ -68,19 +69,22 @@ public class DoctorDashboard extends AppCompatActivity {
 
     public synchronized void getList() {
 
-
+        Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
                 new Response.Listener<org.json.JSONArray>() {
+
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
+                        Toast.makeText(DoctorDashboard.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
+                        Log.d("TAG",""+response);
                         while (count < response.length()) {
 
-
+                            Toast.makeText(DoctorDashboard.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
-                                BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
-
+                                // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
+                                Toast.makeText(DoctorDashboard.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
                                 DoctorModel doctorModel = new DoctorModel(jsoNobject.getString("name"),
                                         jsoNobject.getString("hospital"), jsoNobject.getString("status"),
                                         jsoNobject.getString("contact_no"));
@@ -112,7 +116,7 @@ public class DoctorDashboard extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("id", "1");
+                params.put("doc_id", "1");
                 //  params.put("pass", password);
 
                 // params.put("location",location2);

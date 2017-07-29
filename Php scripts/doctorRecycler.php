@@ -6,6 +6,7 @@ $user_id = "1";
 $date="2016-07-09 01:18:25";
 
 $doc_id = $_POST['doc_id'];
+//$doc_id="1";
 
 
 $sql="select * from childprofile where doctor_id='$doc_id';";
