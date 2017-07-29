@@ -9,6 +9,12 @@ public class DoctorModel {
     String childName;
     String hospital;
 
+    public DoctorModel(String childName, String hospital, String status) {
+        this.childName = childName;
+        this.hospital = hospital;
+        this.status = status;
+    }
+
     public String getChildName() {
         return childName;
     }
