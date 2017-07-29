@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @InjectView(com.cfg.team12.makeawish.R.id.input_email) EditText _emailText;
     @InjectView(com.cfg.team12.makeawish.R.id.input_password) EditText _passwordText;
-    @InjectView(com.cfg.team12.makeawish.R.id.btn_login)
+    @InjectView(R.id.btn_login)
     FButton _loginButton;
     @InjectView(com.cfg.team12.makeawish.R.id.link_signup)
     TextView _signupLink;
@@ -40,8 +40,6 @@ public class LoginActivity extends AppCompatActivity {
 
         stakeholder=(Spinner)findViewById(R.id.spinner_select);
         stakeholder.setAdapter(arrayAdapter);
-
-
 
         loginButton.setOnClickListener(new View.OnClickListener() {
 
