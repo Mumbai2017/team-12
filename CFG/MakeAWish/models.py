@@ -57,6 +57,8 @@ class Volunteer(models.Model):
     hospital = models.CharField(max_length=20)
     status = models.BooleanField(default=False)
     points = models.IntegerField()
+    contact_no = models.BigIntegerField(default=9870486233)
+    email = models.EmailField(default="suhailsbarot@gmail.com")
 
     def __str__(self):
         return self.name + " " + self.volunteer_type
