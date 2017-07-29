@@ -58,3 +58,13 @@ ph_no bigint,
 points int,
 amt int
 );
+
+create table transaction(
+donor_id int,
+child_id int,
+amt int,
+method varchar(20),
+dateofPay date,
+foreign key(donor_id) references donor(don_id),
+foreign key(child_id) references childprofile(id)
+);
