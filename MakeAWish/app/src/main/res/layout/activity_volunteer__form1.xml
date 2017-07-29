@@ -5,16 +5,16 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/aboutFamily"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/aboutFamily"
         android:layout_margin="8dp"
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/aboutFriends"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/aboutFriends"
             android:hint="About Family"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -35,32 +35,35 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/adharCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Adhar Card"
-                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/electionCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="ElectionCard"
-                android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/rationCard"
-                android:text="RationCard"
-                android:layout_weight="1"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/DrivingLicense"
-                android:text="DrivingLicense"
                 android:layout_weight="1"
+                android:text="RationCard"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioButton
+                android:id="@+id/DrivingLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DrivingLicense"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </RadioGroup>
@@ -69,8 +72,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="What is your favourite"
             android:layout_marginTop="12dp"
+            android:text="What is your favourite"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TableLayout
@@ -79,124 +82,90 @@
             android:layout_height="wrap_content"
             android:shrinkColumns="1"
             android:stretchColumns="*"
-            android:visibility="visible" >
+            android:visibility="visible">
 
             <TableRow>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Color : "
                     android:layout_weight="0"
+                    android:text="Color : "
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <EditText
+                    android:id="@+id/nameOFHospital"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nameOFHospital"
                     android:layout_weight="1"
                     android:hint="Color"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
-        </TableLayout>
+            <TableRow>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book/Story : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/bookStory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Book/Story"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
+            <TableRow>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Game : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/game"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Game"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Book/Story : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/bookStory"
-                android:hint="Book/Story"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <EditText
+                    android:id="@+id/food"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Food"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
-        </LinearLayout>
+            <TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music/Movie : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Game : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <EditText
+                    android:id="@+id/musicMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Music/Moview"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/game"
-                android:hint="Game"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/food"
-                android:hint="Food"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Music/Movie : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/musicMovie"
-                android:hint="Music/Moview"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            </TableRow>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -205,54 +174,47 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
+                android:id="@+id/hobby"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/hobby"
                 android:hint="Hobby"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        </LinearLayout>
+            <TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TV Show/Cartoon : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TV Show/Cartoon : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <EditText
+                    android:id="@+id/tvShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="TV Show"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvShow"
-                android:hint="TV Show"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
-        </LinearLayout>
+            <TableRow>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actor/Actress : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/actorActoress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Actor/Actress :"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Actor/Actress : "
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/actorActoress"
-                android:hint="Actor/Actress :"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        </LinearLayout>
+        </TableLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -261,9 +223,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/tripDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tripDescription"
             android:hint="Describe Trip"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -274,9 +236,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/DescribePlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tripDescription"
             android:hint="Life Plan"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
