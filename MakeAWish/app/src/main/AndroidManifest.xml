@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/weblogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/weblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -31,7 +31,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DonorActivity" />
-        <activity android:name=".ReferActivity"></activity>
+        <activity android:name=".ReferActivity" />
+        <activity android:name=".ReferredList"></activity>
     </application>
 
 </manifest>
