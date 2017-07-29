@@ -19,7 +19,6 @@ body {font-family: "Lato", sans-serif;}
 
 /* Style the tab content */
 .tabcontent {
-    color: white;
     display: none;
     padding: 50px;
     text-align: center;
@@ -29,4 +28,23 @@ body {font-family: "Lato", sans-serif;}
 #header
 {
     background: #006BB6;
+}
+#childcard
+{
+    padding: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #dee0e5;
+    text-align: left;
+    padding-left: 10px;
+    display:block;
+    box-shadow: 0 0 5px -1px black;
+
+}
+#childcard img
+{
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin: 20px
 }
