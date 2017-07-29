@@ -53,7 +53,7 @@ public class ReferredList extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        getJSONdata();
+
 
         for (int i = 0; i < 5; i++) {
             BigInteger bigInteger2 = new BigInteger("543534535");
@@ -77,9 +77,14 @@ public class ReferredList extends AppCompatActivity {
 
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
+                                BigInteger bigInteger= (BigInteger) jsoNobject.get("phone");
+
+                                ReferredData referredData=new ReferredData(jsoNobject.getString("name"),
+                                        jsoNobject.getString("address"),
+                                        jsoNobject)
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
-                                arrayList.add(contact);
+                                arraylist.add(contact);
 
                                 //  Toast.makeText(context, count + " - count," + arrayList.get(0), Toast.LENGTH_SHORT).show();
                                 count++;
