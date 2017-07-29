@@ -6,17 +6,17 @@
     <string name="start">GOT IT</string>
 
 
-    <string name="slide_1_title">Auto/Taxi Fare</string>
-    <string name="slide_1_desc">Calculate Fare based on Traffic and Night Charges!</string>
+    <string name="slide_1_title">Welcome to Make A Wish!</string>
+    <string name="slide_1_desc">Grant the wishes of children with life threatening conditons with us.</string>
 
-    <string name="slide_2_title">Public Transport</string>
-    <string name="slide_2_desc">From Local Trains to BEST Buses, just tap to get the fare of each Transport Mode used in your Journey!      </string>
+    <string name="slide_2_title">Join as a volunteer!</string>
+    <string name="slide_2_desc">Be a wish granter, a wish organiser or a skill based volunteer       </string>
 
-    <string name="slide_3_title">Fitness Enthusiast?</string>
-    <string name="slide_3_desc">Calculate the Calories you burn, next time you take a walk to your workplace!</string>
+    <string name="slide_3_title">Donate to Us!</string>
+    <string name="slide_3_desc">You can sponsor a wish or donate any amount you can</string>
 
-    <string name="slide_4_title">Choose the Best Option!</string>
-    <string name="slide_4_desc">Just key in the Source and Destination and compare each travel mode based on Fare, Time and Distance! </string>
+    <string name="slide_4_title">Checkout our Chat-Bots!</string>
+    <string name="slide_4_desc">You can search our chatbot on Facebook and get your questions answered  </string>
 
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
