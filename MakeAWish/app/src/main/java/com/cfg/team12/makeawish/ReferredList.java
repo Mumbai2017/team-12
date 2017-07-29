@@ -32,16 +32,19 @@ public class ReferredList extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         ArrayList<ReferredData> data = new ArrayList<>();
+        BigInteger bigInteger = new BigInteger("543534535");
+        ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
+        data.add(referredData);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(data);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         for (int i = 0; i < 5; i++) {
-            BigInteger bigInteger = new BigInteger("543534535");
-            ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
+            BigInteger bigInteger2 = new BigInteger("543534535");
+            ReferredData referredData2 = new ReferredData("Rohit", "Mumbai", bigInteger);
             data.add(referredData);
-            recyclerViewAdapter.notifyDataSetChanged();
-        }
 
+        }
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
