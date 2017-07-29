@@ -25,7 +25,11 @@
         <activity android:name=".DonorActivity" />
         <activity android:name=".ReferActivity" />
         <activity android:name=".ReferredList" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".VolunterData" />
         <activity android:name=".Volunteer_Form1" />
