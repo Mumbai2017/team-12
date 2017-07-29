@@ -3,8 +3,13 @@ package com.cfg.team12.makeawish;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -26,12 +31,31 @@ public class VolunterData extends AppCompatActivity {
 
     @InjectView(R.id.btn_signup)
     FButton signUpButton;
+
+    Spinner s1,s2,s3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunter_data);
 
         ButterKnife.inject(this);
+
+        s1 = (Spinner) findViewById(R.id.spinner_select1);
+        s2 = (Spinner) findViewById(R.id.spinner_select2);
+        s3 = (Spinner) findViewById(R.id.spinner_select3);
+
+        List<String> list = new ArrayList<>();
+        list.add("I wish to have");
+        list.add("I wish to want");
+        list.add("I wish to go");
+        list.add("I wish to be");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,list);
+
+        s1.setAdapter(adapter);
+        s2.setAdapter(adapter);
+        s3.setAdapter(adapter);
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
