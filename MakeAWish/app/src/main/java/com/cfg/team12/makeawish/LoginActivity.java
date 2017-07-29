@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
-        builder=new AlertDialog.Builder(LoginActivity.this);
+        builder = new AlertDialog.Builder(LoginActivity.this);
         stakeholder = (Spinner) findViewById(R.id.spinner_select);
         stakeholder.setAdapter(arrayAdapter);
 
@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (response.equals("Login success")) {
-                    startActivity(new Intent(LoginActivity.this, ReferActivity.class));
+                    startActivity(new Intent(LoginActivity.this, ReferredList.class));
                 } else {
                     builder.setTitle("Server Response");
 
