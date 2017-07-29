@@ -76,7 +76,7 @@ public class Vouchers extends AppCompatActivity {
             ReferredData rf = referredDatas.get(position);
             Toast.makeText(Vouchers.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
-            holder.txtName.setText(referredDatas.get(position).getAddress());
+            holder.txtName.setText(referredDatas.get(position).getName());
             BigInteger number = referredDatas.get(position).getPhone();
 
 

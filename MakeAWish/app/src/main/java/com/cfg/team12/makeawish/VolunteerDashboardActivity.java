@@ -1,6 +1,7 @@
 package com.cfg.team12.makeawish;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -191,13 +192,14 @@ public class VolunteerDashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_manage) { */
 
-        } else if (id == R.id.nav_share) {
+       if (id == R.id.nav_vouchers) {
+           startActivity(new Intent(VolunteerDashboardActivity.this,Vouchers.class));
 
-        } else if (id == R.id.nav_send) {
-
-        }*/
+        } else {
+           Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -227,7 +229,7 @@ public class VolunteerDashboardActivity extends AppCompatActivity
             ReferredData rf = referredDatas.get(position);
             Toast.makeText(VolunteerDashboardActivity.this, "" + rf.getName(), Toast.LENGTH_SHORT).show();
             holder.txtAddress.setText(referredDatas.get(position).getAddress());
-            holder.txtName.setText(referredDatas.get(position).getAddress());
+            holder.txtName.setText(referredDatas.get(position).getName());
             BigInteger number = referredDatas.get(position).getPhone();
 
 
