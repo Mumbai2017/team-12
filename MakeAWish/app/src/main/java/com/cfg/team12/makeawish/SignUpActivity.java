@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -29,6 +30,9 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
+        ButterKnife.inject(this);
+
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,5 +44,8 @@ public class SignUpActivity extends AppCompatActivity {
     private void register() {
         String email2 = email.getText().toString();
         String password2 = password.getText().toString();
+        String aadhar2=aadhar.getText().toString();
+        String location2=location.getText().toString();
+
     }
 }
