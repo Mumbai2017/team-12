@@ -7,9 +7,13 @@ from CFG.settings import TEMPLATE_PATH, STATIC_URL
 # Create your views here.
 
 def admin_panel(request):
-    pending_wishes = ChildProfile.objects.get(wish_status = 1 | wish_status = 2 | wish_status = 3)
-    print(pending_wishes)
-    return render(request, TEMPLATE_PATH + '/MakeAWish/index.html')
+    pending_wishes = ChildProfile.objects.filter(wish_status__lte=3).count()
+    pending_approval = Volunteer.objects.filter(status=False).count()
+    doc_list = Doctor.objects.all().count()
+    active_donors = Donor.objects.all().count()
+    context_dict = {'active_donors': active_donors, 'doc_list': doc_list, 'pending_wishes': pending_wishes,
+                    'pending_approval': pending_approval}
+    return render(request, TEMPLATE_PATH + '/MakeAWish/index.html', context_dict)
 
 
 def wishes_panel(request):
@@ -17,7 +21,9 @@ def wishes_panel(request):
 
 
 def volunteer_panel(request):
-    return render(request, TEMPLATE_PATH + '/MakeAWish/vol.html')
+    pending_approval = Volunteer.objects.filter(status=False).count()
+    context_dict = {'pending': pending_approval}
+    return render(request, TEMPLATE_PATH + '/MakeAWish/vol.html', context_dict)
 
 
 def doctor_panel(request):
@@ -25,4 +31,5 @@ def doctor_panel(request):
 
 
 def donoe_panel(request):
+    methods = Donor.objects.get()
     return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html', {'values': [['foo', 32], ['bar', 64], ['baz', 96]]})
