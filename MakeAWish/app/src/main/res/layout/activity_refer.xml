@@ -3,7 +3,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
-
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -64,14 +63,7 @@
             fbutton:shadowEnabled="true"
             fbutton:shadowHeight="5dp" />
 
-       <!-- <TextView android:id="@+id/link_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Already a member? Login"
-            android:gravity="center"
-            android:textSize="16dip"
-            />-->
+
 
     </LinearLayout>
 </ScrollView>
