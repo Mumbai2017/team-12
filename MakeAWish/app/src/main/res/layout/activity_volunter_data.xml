@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="Create Account"
+            android:text="Register data"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             fbutton:buttonColor="@color/fbutton_color_emerald"
@@ -105,14 +105,14 @@
 
 
 
-        <TextView android:id="@+id/link_login"
+      <!--  <TextView android:id="@+id/link_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
             android:textSize="16dip"
-            />
+            />-->
 
     </LinearLayout>
 </ScrollView>
