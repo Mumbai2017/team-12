@@ -1,11 +1,24 @@
 package com.cfg.team12.makeawish;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.cfg.team12.makeawish.model.MySingleton;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,6 +33,8 @@ public class SignUpActivity extends AppCompatActivity {
     @InjectView(R.id.input_aadhar)EditText aadhar;
     @InjectView(R.id.input_city)EditText location;
 
+    String url="http://192.168.1.5/updateinfo.php";
+    AlertDialog.Builder builder;
 
     @InjectView(R.id.btn_signup)
     FButton signUpButton;
@@ -31,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-
+        builder=new AlertDialog.Builder(SignUpActivity.this);
         ButterKnife.inject(this);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +62,40 @@ public class SignUpActivity extends AppCompatActivity {
         String password2 = password.getText().toString();
         String aadhar2=aadhar.getText().toString();
         String location2=location.getText().toString();
+
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                builder.setTitle("Server Response");
+                builder.setMessage("Response"+response);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                        edtEmail.setText("");
+//                        edtPassword.setText("");
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(SignUpActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params=new HashMap<String, String>();
+                params.put("username",username);
+                params.put("password",pass);
+
+                return params;
+            }
+        };
+        MySingleton.getmInstance(InsertData.this).addToRequestQueue(stringRequest);
+    }
 
     }
 }
