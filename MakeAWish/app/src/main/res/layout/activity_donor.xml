@@ -39,12 +39,12 @@
             />
 
 
-        <EditText android:id="@+id/input_aadhar"
+    <!--    <EditText android:id="@+id/input_aadhar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="Aadhar Card"
-            />
+            />-->
 
         <EditText android:id="@+id/input_city"
             android:layout_width="match_parent"
