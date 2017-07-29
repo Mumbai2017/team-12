@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/colorPrimary">
+   >
 
     <LinearLayout
         android:orientation="vertical"
@@ -32,8 +32,6 @@
                 android:inputType="textEmailAddress"
                 android:hint="Email"
                 android:textColor="#ffffff" />
-
-
 
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
