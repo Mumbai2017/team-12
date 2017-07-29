@@ -14,7 +14,7 @@ $res=mysqli_query($con,$sql);
 
 $response=array();
 while($row=mysqli_fetch_assoc($res)){
-	array_push($response,array("child_name"=>$row['child_name'],"hospital"=>$row['hospital'],"contact_no"=>$row['contact_no'],"disease"=>$row['disease'],"status"=>$row['status']));
+	array_push($response,array("id"=>$row['id'],"child_name"=>$row['child_name'],"hospital"=>$row['hospital'],"contact_no"=>$row['contact_no'],"disease"=>$row['disease'],"status"=>$row['status']));
 }
 
 echo json_encode($response);
