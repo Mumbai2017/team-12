@@ -5,7 +5,7 @@ require 'init.php';
 $name=$_POST['name'];
 $pass=$_POST['pass'];
 
-$sql="select * from doner where email='$name' and password='$pass';";
+$sql="select * from donor where email='$name' and password='$pass';";
 //echo $sql;
 $res=mysqli_query($con,$sql);
 
