@@ -4,7 +4,10 @@ from MakeAWish.models import ChildProfile, Doctor, Volunteer, Donor, Transaction
 from CFG.settings import TEMPLATE_PATH, STATIC_URL
 
 
-# Create your views here.
+# VIews for Admin Dashboard
+def start_page(request):
+    return render(request, TEMPLATE_PATH + '/MakeAWish/index.html')
+
 
 def admin_panel(request):
     pending_wishes = ChildProfile.objects.filter(wish_status__lte=3).count()
@@ -13,7 +16,7 @@ def admin_panel(request):
     active_donors = Donor.objects.all().count()
     context_dict = {'active_donors': active_donors, 'doc_list': doc_list, 'pending_wishes': pending_wishes,
                     'pending_approval': pending_approval}
-    return render(request, TEMPLATE_PATH + '/MakeAWish/index.html', context_dict)
+    return render(request, TEMPLATE_PATH + '/MakeAWish/index-admin.html', context_dict)
 
 
 def wishes_panel(request):
@@ -32,4 +35,25 @@ def doctor_panel(request):
 
 def donoe_panel(request):
     methods = Donor.objects.get()
-    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html', {'values': [['foo', 32], ['bar', 64], ['baz', 96]]})
+    context_dict = {
+        'methods': methods
+    }
+    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html', context_dict)
+
+
+# View for the Staff Dashboard
+def staff_panel(request):
+    return render(request, TEMPLATE_PATH + '/MakeAWish/staff/staff.html')
+
+
+def login(request):
+    return render(request, TEMPLATE_PATH + '/MakeAWish/login.html')
+
+
+def staff_full(request):
+    return render(request, TEMPLATE_PATH + '/MakeAWish/staff/full.html')
+
+
+def staff_mail(request):
+    return render(request, TEMPLATE_PATH + '/MakeAWish/staff/mail.html')
+
