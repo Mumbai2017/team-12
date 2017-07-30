@@ -14,7 +14,8 @@ $wishType3=$_POST['wishtype3'];
 $wish3=$_POST['wish3'];
 $wish_desc3=$_POST['wish_desc3'];
 
-$_POST['id'];
+$id = $_POST['id'];
+$hospital = $_POST['hospital'];
 
 /*$name='name';
 $area='area';
@@ -36,12 +37,12 @@ if(mysqli_query($con,$sql)){
 }
 
 
-$sql = "select * from volunteer where hospital = ";
+$sql = "select * from volunteer where hospital like '{$hospital}' ORDER BY date ASC";
+$res = mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($res)//get first row only
 
 
-$sql = "Update childprofile set vol_id=1 where id=1";
-
-
+$sql = "Update childprofile set vol_id='{$row['volunteer_id']}' where id='{$id}'";
 
 array_push($response, array("code"=>$code,"message"=>$message));
 
