@@ -8,13 +8,13 @@ public class staffModel {
 
     String child_name;
 
-    public staffModel(String child_name, int id, String hospital, String contact_number, String status, String doner) {
+    public staffModel(String child_name, String hospital, String contact_number, String status) {
         this.child_name = child_name;
-        this.id = id;
+
         this.hospital = hospital;
         this.contact_number = contact_number;
         this.status = status;
-        this.doner = doner;
+
     }
 
     public String getChild_name() {
@@ -25,13 +25,13 @@ public class staffModel {
         this.child_name = child_name;
     }
 
-    public int getId() {
+  /*  public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
+    }*/
 
     public String getHospital() {
         return hospital;
@@ -56,16 +56,16 @@ public class staffModel {
     public void setStatus(String status) {
         this.status = status;
     }
-
+/*
     public String getDoner() {
         return doner;
     }
 
     public void setDoner(String doner) {
         this.doner = doner;
-    }
+    }*/
 
-    int id;
-    String hospital,contact_number,status,doner;
+
+    String hospital,contact_number,status;
 
 }

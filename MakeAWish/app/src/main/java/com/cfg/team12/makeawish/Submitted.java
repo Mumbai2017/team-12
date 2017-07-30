@@ -64,7 +64,7 @@ public class Submitted extends AppCompatActivity {
     public synchronized void getList() {
         int id = 1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url + "?id=" + id, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
                 new Response.Listener<org.json.JSONArray>() {
 
                     @Override
@@ -79,12 +79,12 @@ public class Submitted extends AppCompatActivity {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
                                 Toast.makeText(Submitted.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
-                                        jsoNobject.getInt("id")
+                                staffModel staffModel = new staffModel(jsoNobject.getString("name")
+
                                         , jsoNobject.getString("hospital"),
                                         jsoNobject.getString("contact_no"),
-                                        jsoNobject.getString("status"),
-                                        jsoNobject.getString("doner")
+                                        jsoNobject.getString("status")
+
                                 );
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),

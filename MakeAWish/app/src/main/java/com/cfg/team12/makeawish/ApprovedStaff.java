@@ -32,9 +32,10 @@ public class ApprovedStaff extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<staffModel> arraylist = new ArrayList<>();
-    String url="http://freeecommercewebsite.in/Cfg/staff_fetchdata_2.php";
+    String url = "http://freeecommercewebsite.in/Cfg/staff_fetchdata_3.php";
     public static int flag = 11;
     public static String childName = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,29 +62,29 @@ public class ApprovedStaff extends AppCompatActivity {
     }
 
     public synchronized void getList() {
-        int id=1;
+        int id = 1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
                 new Response.Listener<org.json.JSONArray>() {
 
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
-                        Toast.makeText(ApprovedStaff.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
-                        Log.d("TAG",""+response);
+                        Toast.makeText(ApprovedStaff.this, "called1" + response.length(), Toast.LENGTH_SHORT).show();
+                        Log.d("TAG", "" + response);
                         while (count < response.length()) {
 
-                            Toast.makeText(ApprovedStaff.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ApprovedStaff.this, "dsad" + response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
                                 Toast.makeText(ApprovedStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
-                                        jsoNobject.getInt("id")
+                                staffModel staffModel = new staffModel(jsoNobject.getString("name")
+
                                         , jsoNobject.getString("hospital"),
                                         jsoNobject.getString("contact_no"),
-                                        jsoNobject.getString("status"),
-                                        jsoNobject.getString("doner")
+                                        jsoNobject.getString("status")
+
                                         );
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),

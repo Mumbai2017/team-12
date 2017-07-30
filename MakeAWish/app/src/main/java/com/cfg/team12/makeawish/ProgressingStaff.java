@@ -32,7 +32,7 @@ public class ProgressingStaff extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<staffModel> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/staff_fetchdata_1.php";
+    String url = "http://freeecommercewebsite.in/Cfg/staff_fetchdata_3.php";
     public static int flag = 11;
     public static String childName = "";
     @Override
@@ -63,7 +63,7 @@ public class ProgressingStaff extends AppCompatActivity {
     public synchronized void getList() {
         int id=1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null,
                 new Response.Listener<org.json.JSONArray>() {
 
                     @Override
@@ -78,12 +78,12 @@ public class ProgressingStaff extends AppCompatActivity {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
                                 Toast.makeText(ProgressingStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
-                                        jsoNobject.getInt("id")
+                                staffModel staffModel = new staffModel(jsoNobject.getString("name")
+
                                         , jsoNobject.getString("hospital"),
                                         jsoNobject.getString("contact_no"),
-                                        jsoNobject.getString("status"),
-                                        jsoNobject.getString("doner")
+                                        jsoNobject.getString("status")
+
                                 );
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
@@ -115,7 +115,6 @@ public class ProgressingStaff extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("id", "1");
                 //  params.put("pass", password);
-
                 // params.put("location",location2);
                 // params.put("hospital",)
 

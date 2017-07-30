@@ -53,16 +53,6 @@
         fbutton:shadowEnabled="true"
         fbutton:shadowHeight="5dp" />
 
-    <info.hoang8f.widget.FButton
-        android:id="@+id/btn_loginstaff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Login as Staff"
-        fbutton:buttonColor="@color/fbutton_color_emerald"
-        fbutton:cornerRadius="5dp"
-        fbutton:shadowColor="@color/fbutton_color_green_sea"
-        fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="5dp" />
+
 
 </LinearLayout>
