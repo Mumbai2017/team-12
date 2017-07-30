@@ -37,11 +37,11 @@
             />
 
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/input_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Phone"
+            android:inputType="phone"
             />
 
         <info.hoang8f.widget.FButton

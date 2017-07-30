@@ -32,7 +32,7 @@ public class ApprovedStaff extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<staffModel> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/doctorRecycler.php";
+    String url="http://freeecommercewebsite.in/Cfg/staff_fetchdata_2.php";
     public static int flag = 11;
     public static String childName = "";
     @Override

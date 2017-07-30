@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     @InjectView(R.id.btn_register)
     FButton btnReg;
+
+
+    @InjectView(R.id.btn_loginstaff)
+    FButton btnRegStaff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,SignUpActivity.class));
+            }
+        });
+
+        btnRegStaff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,StaffLogin.class));
             }
         });
     }

@@ -11,14 +11,9 @@ import info.hoang8f.widget.FButton;
 
 public class StaffLogin extends AppCompatActivity {
 
-    @InjectView(R.id.btn_refer)
-    FButton btnRefer;
-
     @InjectView(R.id.btn_login)
     FButton btnLogin;
 
-    @InjectView(R.id.btn_register)
-    FButton btnReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +25,10 @@ public class StaffLogin extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffLogin.this, LoginActivity.class));
+                startActivity(new Intent(StaffLogin.this, StaffMain.class));
             }
         });
 
-        btnRefer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StaffLogin.this, ReferActivity.class));
-            }
-        });
 
-        btnReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StaffLogin.this, SignUpActivity.class));
-            }
-        });
     }
 }

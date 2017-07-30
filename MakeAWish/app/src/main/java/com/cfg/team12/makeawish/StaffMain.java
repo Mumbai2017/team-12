@@ -19,6 +19,7 @@ public class StaffMain extends AppCompatActivity {
 
     @InjectView(R.id.btn_register)
     FButton btnReg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,24 +27,25 @@ public class StaffMain extends AppCompatActivity {
 
         ButterKnife.inject(this);
 
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,LoginActivity.class));
+                startActivity(new Intent(StaffMain.this, ProgressingStaff.class));
             }
         });
 
         btnRefer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,ReferActivity.class));
+                startActivity(new Intent(StaffMain.this, Submitted.class));
             }
         });
 
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,SignUpActivity.class));
+                startActivity(new Intent(StaffMain.this, ApprovedStaff.class));
             }
         });
     }
