@@ -29,21 +29,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProgressingStaff extends AppCompatActivity {
-
+    private RecyclerView recyclerView;
+    private RecyclerViewAdapter recyclerViewAdapter;
+    ArrayList<staffModel> arraylist = new ArrayList<>();
+    String url = "http://freeecommercewebsite.in/Cfg/doctorRecycler.php";
+    public static int flag = 11;
+    public static String childName = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progressing_staff);
-       /* recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
+        setContentView(R.layout.activity_approved_staff);
+        recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-       *//* ArrayList<ReferredData> data = new ArrayList<>();
-        BigInteger bigInteger = new BigInteger("543534535");*//*
+       /* ArrayList<ReferredData> data = new ArrayList<>();
+        BigInteger bigInteger = new BigInteger("543534535");*/
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        staffModel staffModel = new staffModel("name",
+     /*   staffModel staffModel = new staffModel("name",
                 "hospital", "status",
-                "contact_no");
-        arraylist.add(staffModel);
+                "contact_no");*/
+        //arraylist.add(staffModel);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -52,10 +57,10 @@ public class ProgressingStaff extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
         getList();
 
-        recyclerViewAdapter.notifyDataSetChanged();*/
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 
-   /* public synchronized void getList() {
+    public synchronized void getList() {
         int id=1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
@@ -64,21 +69,25 @@ public class ProgressingStaff extends AppCompatActivity {
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
-                        Toast.makeText(DoctorDashboard.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProgressingStaff.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
                         Log.d("TAG",""+response);
                         while (count < response.length()) {
 
-                            Toast.makeText(DoctorDashboard.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProgressingStaff.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
-                                Toast.makeText(DoctorDashboard.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                staffModel staffModel = new staffModel(jsoNobject.getString("name"),
-                                        jsoNobject.getString("hospital"), jsoNobject.getString("status"),
-                                        jsoNobject.getString("contact_no"));
-                             *//*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
+                                Toast.makeText(ProgressingStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
+                                staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
+                                        jsoNobject.getInt("id")
+                                        , jsoNobject.getString("hospital"),
+                                        jsoNobject.getString("contact_no"),
+                                        jsoNobject.getString("status"),
+                                        jsoNobject.getString("doner")
+                                );
+                             /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
-                                        bigInteger);*//*
+                                        bigInteger);*/
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
                                 arraylist.add(staffModel);
@@ -150,18 +159,18 @@ public class ProgressingStaff extends AppCompatActivity {
 
         @Override
         public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_doctor_view, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list__staffref, parent, false);
             return new RecyclerViewHolder(view, parent.getContext());
         }
 
         @Override
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
-             rf = referredDatas.get(position);
-            // Toast.makeText(DoctorDashboard.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
-            holder.txtAddress.setText(referredDatas.get(position).getAddress());
-            holder.txtName.setText(referredDatas.get(position).getChildName());
-            holder.txtContact.setText(referredDatas.get(position).getStatus());
+            staffModel rf = referredDatas.get(position);
+            // Toast.makeText(ProgressingStaff.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
+
+            holder.txtName.setText(referredDatas.get(position).getChild_name());
+            holder.txtAddress.setText(referredDatas.get(position).getHospital());
             //  holder.id = referredDatas.get(position).id;
 
         }
@@ -187,13 +196,13 @@ public class ProgressingStaff extends AppCompatActivity {
 
 
 
-                *//*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*//*
+                /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // int itemPosition = recyclerView.getChildLayoutPosition(v);
+                    // int itemPosition = recyclerView.getChildLayoutPosition(v);
                     //flag = id;
 
                     //  Toast.makeText(getApplicationContext(), "" + flag, Toast.LENGTH_LONG).show();
@@ -202,5 +211,5 @@ public class ProgressingStaff extends AppCompatActivity {
             });
 
         }
-    }*/
+    }
 }
