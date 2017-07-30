@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String selected = stakeholder.getSelectedItem().toString();
+        final String selected = stakeholder.getSelectedItem().toString();
 
         if (selected.equals("Donor")) {
             url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
@@ -88,11 +88,18 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (response.equals("Login success")) {
-                    startActivity(new Intent(LoginActivity.this, VolunteerDashboardActivity.class));
+                    if (selected.equals("Donor")) {
+                        startActivity(new Intent(LoginActivity.this, DonorActivity.class));
+                    } else if (selected.equals("Doctor")) {
+                        startActivity(new Intent(LoginActivity.this, DoctorDashboard.class));
+                    } else {
+                        startActivity(new Intent(LoginActivity.this, VolunteerDashboardActivity.class));
+                    }
+
                 } else {
                     builder.setTitle("Server Response");
 
-                    builder.setMessage("Response" + response);
+                    builder.setMessage("Invalid Credentials" + response);
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
