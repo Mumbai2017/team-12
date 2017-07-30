@@ -82,6 +82,7 @@ public class VolunterData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // register();
+                startActivity(new Intent(VolunterData.this, Otp.class));
             }
         });
     }

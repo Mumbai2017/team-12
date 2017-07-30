@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fbutton=""
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.cfg.team12.makeawish.VolunteerDashboardActivity"
     tools:showIn="@layout/app_bar_volunteer_dashboard">
@@ -15,17 +15,6 @@
         android:scrollbars="none"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp"></android.support.v7.widget.RecyclerView>
-    <info.hoang8f.widget.FButton
-        android:id="@+id/btn_data"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        fbutton:buttonColor="@color/fbutton_color_emerald"
-        fbutton:cornerRadius="5dp"
-        fbutton:shadowColor="@color/fbutton_color_green_sea"
-        fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="5dp"
-        tools:layout_editor_absoluteY="447dp"
-        tools:layout_editor_absoluteX="280dp" />
+
 
 </android.support.constraint.ConstraintLayout>

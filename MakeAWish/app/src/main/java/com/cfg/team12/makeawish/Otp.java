@@ -16,7 +16,7 @@ public class Otp extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),VolunterData.class);
+                Intent i = new Intent(getApplicationContext(),VolunteerDashboardActivity.class);
             }
         });
 

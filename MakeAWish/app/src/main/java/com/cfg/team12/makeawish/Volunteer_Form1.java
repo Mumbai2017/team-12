@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,20 +27,28 @@ public class Volunteer_Form1 extends AppCompatActivity {
     EditText aboutFamily, aboutFriends, color, game, food, music, hobby, tv_show, actor, trip, describePlan;
     RadioGroup parentIdbtn;
     String url="http://freeecommercewebsite.in/Cfg/volunteer_form1.php";
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer__form1);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        btn=(Button)findViewById(R.id.btn);
+btn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        register();
+    }
+});
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 register();
                 Intent i = new Intent(getApplicationContext(),Otp.class);
             }
-        });
+        });*/
 
         aboutFamily = (EditText) findViewById(R.id.aboutFamily);
         aboutFriends = (EditText) findViewById(R.id.aboutFriends);
@@ -65,10 +74,10 @@ public class Volunteer_Form1 extends AppCompatActivity {
             public void onResponse(String response) {
 
                 if(response.equals("Registered")){
-                    startActivity(new Intent(Volunteer_Form1.this,VolunteerDashboardActivity.class));
-                }else{
-                    Toast.makeText(Volunteer_Form1.this, "Registeration failed", Toast.LENGTH_SHORT).show();
+
                 }
+                    startActivity(new Intent(Volunteer_Form1.this,VolunterData.class));
+
                /* builder.setTitle("Server Response");
                 builder.setMessage("Response"+response);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -111,7 +120,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
                 String strplan = describePlan.getText().toString();
 
                 Map<String,String> params=new HashMap<String, String>();
-                params.put("id","1");
+                params.put("id","4535");
                 params.put("aboutfamily",strfamily);
                 params.put("aboutfriends",strfriends);
                 params.put("parentId",selection);
