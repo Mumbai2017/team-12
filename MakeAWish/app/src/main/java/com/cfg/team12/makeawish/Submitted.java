@@ -39,7 +39,7 @@ public class Submitted extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_approved_staff);
+        setContentView(R.layout.activity_submitted);
         recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
        /* ArrayList<ReferredData> data = new ArrayList<>();
