@@ -1,4 +1,5 @@
-package info.androidhive.introslider;
+/*
+package com.cfg.team12.makeawish;
 
 import android.content.Context;
 import android.content.Intent;
@@ -152,9 +153,11 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     };
 
-    /**
+    */
+/**
      * Making notification bar transparent
-     */
+     *//*
+
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -163,9 +166,11 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
-    /**
+    */
+/**
      * View pager adapter
-     */
+     *//*
+
     public class MyViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
 
@@ -200,3 +205,4 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 }
+*/

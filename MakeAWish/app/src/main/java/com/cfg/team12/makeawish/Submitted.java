@@ -9,11 +9,14 @@ public class Submitted extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submitted);
-        recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
+        //recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
        /* ArrayList<ReferredData> data = new ArrayList<>();
         BigInteger bigInteger = new BigInteger("543534535");*/
 
+    }
+}
+/*
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
         DoctorModel doctorModel = new DoctorModel("name",
                 "hospital", "status",
@@ -51,9 +54,9 @@ public class Submitted extends AppCompatActivity {
                                 DoctorModel doctorModel = new DoctorModel(jsoNobject.getString("name"),
                                         jsoNobject.getString("hospital"), jsoNobject.getString("status"),
                                         jsoNobject.getString("contact_no"));
-                             /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
+                             *//*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
-                                        bigInteger);*/
+                                        bigInteger);*//*
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
                                 arraylist.add(doctorModel);
@@ -162,7 +165,7 @@ public class Submitted extends AppCompatActivity {
             txtContact = (TextView) itemView.findViewById(R.id.contact);
 
 
-                /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
+                *//*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*//*
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -177,5 +180,5 @@ public class Submitted extends AppCompatActivity {
             });
 
         }
-    }
-}
+    }*/
+

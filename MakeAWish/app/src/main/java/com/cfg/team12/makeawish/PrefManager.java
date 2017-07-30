@@ -1,4 +1,4 @@
-package info.androidhive.introslider;
+package com.cfg.team12.makeawish;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.cfg.team12.makeawish.model.MySingleton;
+import com.cfg.team12.makeawish.model.staffModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,16 +34,16 @@ public class ProgressingStaff extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progressing_staff);
-        recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
+       /* recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-       /* ArrayList<ReferredData> data = new ArrayList<>();
-        BigInteger bigInteger = new BigInteger("543534535");*/
+       *//* ArrayList<ReferredData> data = new ArrayList<>();
+        BigInteger bigInteger = new BigInteger("543534535");*//*
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        DoctorModel doctorModel = new DoctorModel("name",
+        staffModel staffModel = new staffModel("name",
                 "hospital", "status",
                 "contact_no");
-        arraylist.add(doctorModel);
+        arraylist.add(staffModel);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -51,10 +52,10 @@ public class ProgressingStaff extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
         getList();
 
-        recyclerViewAdapter.notifyDataSetChanged();
+        recyclerViewAdapter.notifyDataSetChanged();*/
     }
 
-    public synchronized void getList() {
+   /* public synchronized void getList() {
         int id=1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
@@ -72,15 +73,15 @@ public class ProgressingStaff extends AppCompatActivity {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
                                 Toast.makeText(DoctorDashboard.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                DoctorModel doctorModel = new DoctorModel(jsoNobject.getString("name"),
+                                staffModel staffModel = new staffModel(jsoNobject.getString("name"),
                                         jsoNobject.getString("hospital"), jsoNobject.getString("status"),
                                         jsoNobject.getString("contact_no"));
-                             /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
+                             *//*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
-                                        bigInteger);*/
+                                        bigInteger);*//*
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
-                                arraylist.add(doctorModel);
+                                arraylist.add(staffModel);
 
                                 //  Toast.makeText(context, count + " - count," + arrayList.get(0), Toast.LENGTH_SHORT).show();
                                 count++;
@@ -138,11 +139,11 @@ public class ProgressingStaff extends AppCompatActivity {
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
-        public ArrayList<DoctorModel> referredDatas = new ArrayList<>();
+        public ArrayList<staffModel> referredDatas = new ArrayList<>();
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
 
 
-        RecyclerViewAdapter(ArrayList<DoctorModel> referredDataArrayList) {
+        RecyclerViewAdapter(ArrayList<staffModel> referredDataArrayList) {
             referredDatas = referredDataArrayList;
 
         }
@@ -186,7 +187,7 @@ public class ProgressingStaff extends AppCompatActivity {
 
 
 
-                /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
+                *//*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*//*
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -201,5 +202,5 @@ public class ProgressingStaff extends AppCompatActivity {
             });
 
         }
-    }
+    }*/
 }

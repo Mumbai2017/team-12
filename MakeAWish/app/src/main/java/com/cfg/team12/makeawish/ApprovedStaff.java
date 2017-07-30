@@ -45,10 +45,10 @@ public class ApprovedStaff extends AppCompatActivity {
         BigInteger bigInteger = new BigInteger("543534535");*/
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        staffModel staffModel = new staffModel("name",
+     /*   staffModel staffModel = new staffModel("name",
                 "hospital", "status",
-                "contact_no");
-        arraylist.add(staffModel);
+                "contact_no");*/
+        //arraylist.add(staffModel);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -79,8 +79,12 @@ public class ApprovedStaff extends AppCompatActivity {
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
                                 Toast.makeText(ApprovedStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
                                 staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
-                                        jsoNobject.getString("hospital"), jsoNobject.getString("status"),
-                                        jsoNobject.getString("contact_no"));
+                                        jsoNobject.getInt("id")
+                                        , jsoNobject.getString("hospital"),
+                                        jsoNobject.getString("contact_no"),
+                                        jsoNobject.getString("status"),
+                                        jsoNobject.getString("doner")
+                                        );
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"),
                                         bigInteger);*/
@@ -155,7 +159,7 @@ public class ApprovedStaff extends AppCompatActivity {
 
         @Override
         public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_doctor_view, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list__staffref, parent, false);
             return new RecyclerViewHolder(view, parent.getContext());
         }
 
