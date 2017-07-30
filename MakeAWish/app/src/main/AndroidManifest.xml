@@ -36,11 +36,7 @@
 
         <activity android:name=".Vouchers" />
         <activity android:name=".DoctorDashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
-            </intent-filter>
         </activity>
     </application>
 

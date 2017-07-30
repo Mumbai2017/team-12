@@ -32,7 +32,7 @@ import info.hoang8f.widget.FButton;
 public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
-    String data[] = new String[]{"Donor", "Volunteer"};
+    String data[] = new String[]{"Donor", "Volunteer", "Doctor"};
     String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
     AlertDialog.Builder builder;
 
@@ -69,6 +69,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
+        String selected = stakeholder.getSelectedItem().toString();
+
+        if (selected.equals("Donor")) {
+            url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+        } else if (selected.equals("Doctor")) {
+            url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+        } else {
+            url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+        }
         final String email = _emailText.getText().toString();
         final String password = _passwordText.getText().toString();
 
