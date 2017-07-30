@@ -44,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staff.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="staff.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/MakeAWish/staff/staff.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
               <caret line="154" column="57" lean-forward="false" selection-start-line="154" selection-start-column="57" selection-end-line="154" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CFG/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -121,7 +131,6 @@
         <option value="$PROJECT_DIR$/templates/MakeAWish/doc.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/vol.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/wishes.html" />
-        <option value="$PROJECT_DIR$/CFG/settings.py" />
         <option value="$PROJECT_DIR$/MakeAWish/models.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/index.html" />
         <option value="$PROJECT_DIR$/MakeAWish/views.py" />
@@ -131,11 +140,12 @@
         <option value="$PROJECT_DIR$/templates/MakeAWish/donor.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/login.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/staff/staff.html" />
+        <option value="$PROJECT_DIR$/CFG/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1415" />
+    <option name="x" value="49" />
     <option name="y" value="764" />
     <option name="width" value="1317" />
     <option name="height" value="772" />
@@ -406,7 +416,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1415" y="764" width="1317" height="772" extended-state="6" />
+    <frame x="49" y="764" width="1317" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981017" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -525,14 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CFG/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/MakeAWish/wishes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -621,6 +623,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="154" column="57" lean-forward="false" selection-start-line="154" selection-start-column="57" selection-end-line="154" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CFG/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding />
         </state>
       </provider>

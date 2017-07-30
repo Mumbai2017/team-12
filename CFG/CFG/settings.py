@@ -74,22 +74,22 @@ WSGI_APPLICATION = 'CFG.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-'default': {
+    # 'default': {
+    #         'ENGINE': 'django.db.backends.mysql',
+    #         'NAME': 'cfg',
+    #         'USER': 'rajat',
+    #         'PASSWORD': 'pass@123',
+    #         'HOST': 'localhost',
+    #         'PORT': '3306',
+    #     }
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cfg',
-        'USER': 'rajat',
-        'PASSWORD': 'pass@123',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'cfg',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root',
-    #     'HOST': 'localhost',
-    #     'PORT': '3306',
-    # }
 }
 
 # Password validation
