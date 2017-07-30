@@ -75,9 +75,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(response.equals("Registered")){
                     startActivity(new Intent(SignUpActivity.this,VolunteerDashboardActivity.class));
-                }else{
-                    Toast.makeText(SignUpActivity.this, "Registeration failed", Toast.LENGTH_SHORT).show();
                 }
+                startActivity(new Intent(SignUpActivity.this,VolunteerDashboardActivity.class));
+
                /* builder.setTitle("Server Response");
                 builder.setMessage("Response"+response);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
