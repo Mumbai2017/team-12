@@ -72,9 +72,9 @@ public class LoginActivity extends AppCompatActivity {
         final String selected = stakeholder.getSelectedItem().toString();
 
         if (selected.equals("Donor")) {
-            url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+            url = "http://freeecommercewebsite.in/Cfg/donorLogin.php";
         } else if (selected.equals("Doctor")) {
-            url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+            url = "http://freeecommercewebsite.in/Cfg/doctorLogin.php";
         } else {
             url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
         }
