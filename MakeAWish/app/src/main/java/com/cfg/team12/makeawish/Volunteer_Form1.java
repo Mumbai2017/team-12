@@ -36,8 +36,8 @@ public class Volunteer_Form1 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                register();
+                Intent i = new Intent(this,)
             }
         });
 
@@ -109,13 +109,25 @@ public class Volunteer_Form1 extends AppCompatActivity {
                 String stractor = actor.getText().toString();
                 String strtrip = trip.getText().toString();
                 String strplan = describePlan.getText().toString();
+
                 Map<String,String> params=new HashMap<String, String>();
                 params.put("aboutfamily",strfamily);
                 params.put("aboutfriends",strfriends);
                 params.put("parentId",selection);
-                params.put("idno",aadhar2);
-                params.put("password",password2);
-                params.put("email",email2);
+                params.put("color",strcolor);
+                params.put("game",strgame);
+                params.put("food",strfood);
+                params.put("music",strmusic);
+                params.put("hobby",strhobby);
+                params.put("tv_show",strtv_show);
+                params.put("actor",stractor);
+                params.put("trip",strtrip);
+                params.put("describePlan",strplan);
+
+
+                //params.put("idno",aadhar2);
+                //params.put("password",password2);
+                //params.put("email",email2);
                 params.put("govtid",selection);
                 // params.put("location",location2);
                 // params.put("hospital",)
