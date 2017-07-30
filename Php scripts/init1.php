@@ -1,6 +1,6 @@
 <?php
 $db="cfg";
-$host="54.254.135.31";
+$host="localhost:3306";
 $password="root";
 $user="root";
 
