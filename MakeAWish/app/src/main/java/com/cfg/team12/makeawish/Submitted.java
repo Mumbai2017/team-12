@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProgressingStaff extends AppCompatActivity {
+public class Submitted extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<staffModel> arraylist = new ArrayList<>();
@@ -69,15 +69,15 @@ public class ProgressingStaff extends AppCompatActivity {
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
-                        Toast.makeText(ProgressingStaff.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Submitted.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
                         Log.d("TAG",""+response);
                         while (count < response.length()) {
 
-                            Toast.makeText(ProgressingStaff.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Submitted.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
-                                Toast.makeText(ProgressingStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Submitted.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
                                 staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
                                         jsoNobject.getInt("id")
                                         , jsoNobject.getString("hospital"),
@@ -167,7 +167,7 @@ public class ProgressingStaff extends AppCompatActivity {
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
             staffModel rf = referredDatas.get(position);
-            // Toast.makeText(ProgressingStaff.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(Submitted.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
 
             holder.txtName.setText(referredDatas.get(position).getChild_name());
             holder.txtAddress.setText(referredDatas.get(position).getHospital());

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cfg.team12.makeawish">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/weblogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/weblogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".VolunteerDashboardActivity"
+            android:label="@string/title_activity_volunteer_dashboard"
+<<<<<<< HEAD
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+        <activity android:name=".MainActivity" />
+      
+
+=======
+            android:theme="@style/AppTheme.NoActionBar" />
+>>>>>>> aa6c8ecf28d622a5f939575c474107fac8878235
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".DonorActivity" />
+        <activity android:name=".ReferActivity" />
+        <activity android:name=".ReferredList" />
+        <activity android:name=".VolunterData" />
+        <activity android:name=".Volunteer_Form1" />
+        <activity android:name=".StaffActivity" />
+        <activity android:name=".Vouchers" />
+        <activity android:name=".DoctorDashboard" />
+        <activity android:name=".Otp" />
+        <activity android:name=".ProgressingStaff" />
+        <activity android:name=".ApprovedStaff" />
+        <activity android:name=".Submitted"></activity>
+    </application>
+
+</manifest>

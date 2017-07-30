@@ -92,3 +92,12 @@ class Transaction(models.Model):
     amount = models.IntegerField()
     method_of_payment = models.CharField(max_length=50)
     date_of_pay = models.DateField(default=datetime.date.today)
+
+
+class Staff(models.Model):
+    staff_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    contact_no = models.BigIntegerField()
+    email = models.EmailField()
+    password = models.CharField(max_length=10)
+    area = models.CharField(max_length=20)
