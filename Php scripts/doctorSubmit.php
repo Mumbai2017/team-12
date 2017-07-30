@@ -23,27 +23,31 @@ $mother_name="wejied";
 $disease="cdi dowd";
 
 
-$sql="insert into childprofile(case_no,hospital,child_name,sex,dob,contact_no,father_name,mother_name,disease) values('$case_no','$hospital','$child_name','$gender','$dob','$contact_no','$father_name','$mother_name','$disease');";
-echo $sql;
-/*
-$sql="insert into volunteer(email,password,Name,Area,GovtID,IDno,Hospital,Approved,Points) values('email','password','name','area','34','55','hospital','0','0');";*/
+$sql = "SELECT * FROM childprofile WHERE child_name like '{$child_name}%' and father_name like '{$father_name}%' and mother_name like '{$mother_name}%'";
+//echo $sql."<br>";
+$res = mysqli_query($con,$sql);
 
-/*$sql="INSERT INTO `volunteer` ( `Name`, `Area`, `GovtID`, `IDno`, `Hospital`, `Approved`, `Points`) VALUES ( 'rr', 'rr', '22', '323', 'dfsdf', '0', '1');";*/
-
-
-/*$sql="insert into volunteer(IDno) values(5);";*/
-$response=array();
-
-if(mysqli_query($con,$sql)){
-	$code="reg_success";
-	$message="Registered Successfully";
-}else{
-	$code="reg_fail";
-	$message="Registration Failed";
+if (mysqli_num_rows($res) > 0) {
+    $code="reg_fail";
+	$message="Re-Registration ";
 }
-array_push($response, array("code"=>$code,"message"=>$message));
+else{
+	
+	$sql="insert into childprofile(case_no,hospital,child_name,sex,dob,contact_no,father_name,mother_name,disease) values('$case_no','$hospital','$child_name','$gender','$dob','$contact_no','$father_name','$mother_name','$disease');";
+	//echo $sql;
+	$response=array();
 
-echo json_encode($response);
+	if(mysqli_query($con,$sql)){
+		$code="reg_success";
+		$message="Registered Successfully";
+	}else{
+		$code="reg_fail";
+		$message="Registration Failed";
+	}
+}
+
+array_push($response, array("code"=>$code,"message"=>$message));
+echo json_encode($response)."HH";
 
 mysqli_close($con);
 
