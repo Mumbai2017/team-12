@@ -17,7 +17,17 @@
         android:layout_marginBottom="24dp"
         android:scaleType="fitCenter"
         android:src="@mipmap/weblogo" />
-
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Refer"
+        fbutton:buttonColor="@color/fbutton_color_emerald"
+        fbutton:cornerRadius="5dp"
+        android:layout_marginBottom="10dp"
+        fbutton:shadowColor="@color/fbutton_color_green_sea"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="5dp" />
     <info.hoang8f.widget.FButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"

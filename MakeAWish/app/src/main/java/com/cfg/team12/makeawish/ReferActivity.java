@@ -56,8 +56,8 @@ public class ReferActivity extends AppCompatActivity {
         final String email2 = name.getText().toString();
         final String phone2 = phone.getText().toString();
         final String location2 = location.getText().toString();
-        String url="";
-     //   String selected = stakeholder.getSelectedItem().toString();
+        String url = "";
+        //   String selected = stakeholder.getSelectedItem().toString();
 /*
         if (selected.equals("Donor")) {
             url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
@@ -76,10 +76,10 @@ public class ReferActivity extends AppCompatActivity {
                 if (response.equals("Login success")) {
                     startActivity(new Intent(ReferActivity.this, VolunteerDashboardActivity.class));
                 } else {
-                  //  builder.setTitle("Server Response");
+                    //  builder.setTitle("Server Response");
 
-                   // builder.setMessage("Response" + response);
-                   // builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    // builder.setMessage("Response" + response);
+                    // builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         /*@Override
                         public void onClick(DialogInterface dialog, int which) {
 //                        edtEmail.setText("");
@@ -87,7 +87,7 @@ public class ReferActivity extends AppCompatActivity {
                             //startActivity(new Intent(LoginActivity.this,VolunteerDashboardActivity.class));
                         }*/
 
-                   // AlertDialog alertDialog = builder.create();
+                    // AlertDialog alertDialog = builder.create();
                     //alertDialog.show();
                 }
 
@@ -104,18 +104,17 @@ public class ReferActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("email", email2);
                 params.put("phone", phone2);
-            params.put("location",location2);
+                params.put("location", location2);
 
                 // params.put("location",location2);
                 // params.put("hospital",)
 
-
                 return params;
             }
         };
-        MySingleton.getmInstance(LoginActivity.this).addToRequestQueue(stringRequest);
+        MySingleton.getmInstance(ReferActivity.this).addToRequestQueue(stringRequest);
     }
 
 
 }
-}
+

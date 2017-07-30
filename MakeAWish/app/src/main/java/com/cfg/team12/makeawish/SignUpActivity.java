@@ -71,7 +71,9 @@ public class SignUpActivity extends AppCompatActivity {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                builder.setTitle("Server Response");
+
+                if(response.equals())
+               /* builder.setTitle("Server Response");
                 builder.setMessage("Response"+response);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -81,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
                 AlertDialog alertDialog=builder.create();
-                alertDialog.show();
+                alertDialog.show();*/
 
             }
         }, new Response.ErrorListener() {
