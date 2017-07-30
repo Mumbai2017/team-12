@@ -33,7 +33,9 @@
         <activity android:name=".Vouchers" />
         <activity android:name=".DoctorDashboard" />
         <activity android:name=".Otp" />
-        <activity android:name=".ProgressingStaff"></activity>
+        <activity android:name=".ProgressingStaff" />
+        <activity android:name=".ApprovedStaff" />
+        <activity android:name=".Submitted"></activity>
     </application>
 
 </manifest>

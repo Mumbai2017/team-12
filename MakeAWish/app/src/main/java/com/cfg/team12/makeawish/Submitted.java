@@ -1,38 +1,14 @@
 package com.cfg.team12.makeawish;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.cfg.team12.makeawish.model.MySingleton;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-public class ProgressingStaff extends AppCompatActivity {
+public class Submitted extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progressing_staff);
+        setContentView(R.layout.activity_submitted);
         recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
        /* ArrayList<ReferredData> data = new ArrayList<>();

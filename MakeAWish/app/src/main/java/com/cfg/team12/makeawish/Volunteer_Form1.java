@@ -113,9 +113,9 @@ public class Volunteer_Form1 extends AppCompatActivity {
                 params.put("aboutfamily",strfamily);
                 params.put("aboutfriends",strfriends);
                 params.put("parentId",selection);
-                params.put("idno",aadhar2);
+                /*params.put("idno",aadhar2);
                 params.put("password",password2);
-                params.put("email",email2);
+                params.put("email",email2);*/
                 params.put("govtid",selection);
                 // params.put("location",location2);
                 // params.put("hospital",)

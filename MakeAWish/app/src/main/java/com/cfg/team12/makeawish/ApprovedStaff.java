@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProgressingStaff extends AppCompatActivity {
+public class ApprovedStaff extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progressing_staff);
+        setContentView(R.layout.activity_approved_staff);
         recyclerView = (RecyclerView) findViewById(R.id.doctorRecyclerView);
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
        /* ArrayList<ReferredData> data = new ArrayList<>();
