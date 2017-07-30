@@ -57,25 +57,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
     }
 
     private void register() {
-        String strfamily = aboutFamily.getText().toString();
-        String strfriends = aboutFriends.getText().toString();
-        String selection;
-        if (parentIdbtn.getCheckedRadioButtonId() != -1) {
-            int id = parentIdbtn.getCheckedRadioButtonId();
-            View radioButton = parentIdbtn.findViewById(id);
-            int radioId = parentIdbtn.indexOfChild(radioButton);
-            RadioButton btn = (RadioButton) parentIdbtn.getChildAt(radioId);
-            selection = (String) btn.getText();
-        }
-        String strcolor = color.getText().toString();
-        String strgame = game.getText().toString();
-        String strfood = food.getText().toString();
-        String strmusic = music.getText().toString();
-        String strhobby = hobby.getText().toString();
-        String strtv_show = tv_show.getText().toString();
-        String stractor = actor.getText().toString();
-        String strtrip = trip.getText().toString();
-        String strplan = describePlan.getText().toString();
+
 
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -108,14 +90,33 @@ public class Volunteer_Form1 extends AppCompatActivity {
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-
+                String strfamily = aboutFamily.getText().toString();
+                String strfriends = aboutFriends.getText().toString();
+                String selection="";
+                if (parentIdbtn.getCheckedRadioButtonId() != -1) {
+                    int id = parentIdbtn.getCheckedRadioButtonId();
+                    View radioButton = parentIdbtn.findViewById(id);
+                    int radioId = parentIdbtn.indexOfChild(radioButton);
+                    RadioButton btn = (RadioButton) parentIdbtn.getChildAt(radioId);
+                    selection = (String) btn.getText();
+                }
+                String strcolor = color.getText().toString();
+                String strgame = game.getText().toString();
+                String strfood = food.getText().toString();
+                String strmusic = music.getText().toString();
+                String strhobby = hobby.getText().toString();
+                String strtv_show = tv_show.getText().toString();
+                String stractor = actor.getText().toString();
+                String strtrip = trip.getText().toString();
+                String strplan = describePlan.getText().toString();
                 Map<String,String> params=new HashMap<String, String>();
-              /*  params.put("name",email2);
-                params.put("area",location2);
+                params.put("aboutfamily",strfamily);
+                params.put("aboutfriends",strfriends);
+                params.put("parentId",selection);
                 params.put("idno",aadhar2);
                 params.put("password",password2);
                 params.put("email",email2);
-                params.put("govtid",selection);*/
+                params.put("govtid",selection);
                 // params.put("location",location2);
                 // params.put("hospital",)
 

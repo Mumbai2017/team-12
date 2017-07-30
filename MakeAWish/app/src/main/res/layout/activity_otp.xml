@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="The child's Parent's authorize Make-a wish to obtain all medical information about the child which Make-A-Wish may feel necessary for  consideration or fulfillment of the wish and authorize all physicians and medical care providers including the chil's physician to provide Make a Wish all medical infromation regarding the child   The child's Parent's authorize Make-a wish to obtain all medical information about the child which Make-A-Wish may feel necessary for  consideration or fulfillment of the wish and authorize all physicians and medical care providers including the chil's physician to provide Make a Wish all medical infromation regarding the child    The child's Parent's authorize Make-a wish to obtain all medical information about the child which Make-A-Wish may feel necessary for  consideration or fulfillment of the wish and authorize all physicians and medical care providers including the chil's physician to provide Make a Wish all medical infromation regarding the child" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate OTP"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:hint="Enter OTP"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Submit OTP" />
+</RelativeLayout>
