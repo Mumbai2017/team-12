@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CFG/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="80" column="35" lean-forward="true" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+            <state relative-caret-position="557">
+              <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -72,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="donor.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="donor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/MakeAWish/donor.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1967">
@@ -134,11 +134,11 @@
         <option value="$PROJECT_DIR$/MakeAWish/urls.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/login.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/staff/staff.html" />
-        <option value="$PROJECT_DIR$/CFG/settings.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/wishes.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/vol.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/doc.html" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/donor.html" />
+        <option value="$PROJECT_DIR$/CFG/settings.py" />
       </list>
     </option>
   </component>
@@ -569,14 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/MakeAWish/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -609,10 +601,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CFG/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/donor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="80" column="35" lean-forward="true" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+        <state relative-caret-position="1967">
+          <caret line="192" column="46" lean-forward="false" selection-start-line="192" selection-start-column="46" selection-end-line="192" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -625,10 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/donor.html">
+    <entry file="file://$PROJECT_DIR$/CFG/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1967">
-          <caret line="192" column="46" lean-forward="false" selection-start-line="192" selection-start-column="46" selection-end-line="192" selection-end-column="46" />
+        <state relative-caret-position="557">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
           <folding />
         </state>
       </provider>
