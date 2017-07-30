@@ -25,7 +25,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
 
     EditText aboutFamily, aboutFriends, color, game, food, music, hobby, tv_show, actor, trip, describePlan;
     RadioGroup parentIdbtn;
-    String url="";
+    String url="http://freeecommercewebsite.in/Cfg/volunteer_form1.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 register();
-                Intent i = new Intent(this,)
+                Intent i = new Intent(getApplicationContext(),Otp.class);
             }
         });
 
@@ -111,6 +111,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
                 String strplan = describePlan.getText().toString();
 
                 Map<String,String> params=new HashMap<String, String>();
+                params.put("id","1");
                 params.put("aboutfamily",strfamily);
                 params.put("aboutfriends",strfriends);
                 params.put("parentId",selection);
@@ -128,7 +129,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
                 //params.put("idno",aadhar2);
                 //params.put("password",password2);
                 //params.put("email",email2);
-                params.put("govtid",selection);
+               // params.put("govtid",selection);
                 // params.put("location",location2);
                 // params.put("hospital",)
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,7 +33,7 @@ import info.hoang8f.widget.FButton;
 public class LoginActivity extends AppCompatActivity {
 
     Spinner stakeholder;
-    String data[] = new String[]{"Donor", "Volunteer", "Doctor"};
+    String data[] = new String[]{"Donor", "Volunteer", "Doctor","Staff"};
     String url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
     AlertDialog.Builder builder;
 
@@ -75,8 +76,10 @@ public class LoginActivity extends AppCompatActivity {
             url = "http://freeecommercewebsite.in/Cfg/donerLogin.php";
         } else if (selected.equals("Doctor")) {
             url = "http://freeecommercewebsite.in/Cfg/doctorLogin.php";
-        } else {
+        } else if(selected.equals("Volunteer")) {
             url = "http://freeecommercewebsite.in/Cfg/getvolunteer2.php";
+        }else {
+           startActivity(new Intent(LoginActivity.this,StaffLogin.class));
         }
         final String email = _emailText.getText().toString();
         final String password = _passwordText.getText().toString();
