@@ -54,18 +54,13 @@
 
 
 
-        <EditText android:id="@+id/input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Password" />
         <info.hoang8f.widget.FButton
             android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:layout_marginTop="24dp"
-            android:text="Create Account"
+            android:text="Pay through USSD"
             fbutton:buttonColor="@color/fbutton_color_emerald"
             fbutton:cornerRadius="5dp"
             fbutton:shadowColor="@color/fbutton_color_green_sea"
