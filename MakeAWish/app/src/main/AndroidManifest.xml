@@ -14,17 +14,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".VolunteerDashboardActivity"
             android:label="@string/title_activity_volunteer_dashboard"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".DonorActivity" />
@@ -33,11 +30,10 @@
         <activity android:name=".VolunterData" />
         <activity android:name=".Volunteer_Form1" />
         <activity android:name=".StaffActivity" />
-
         <activity android:name=".Vouchers" />
-        <activity android:name=".DoctorDashboard">
-
-        </activity>
+        <activity android:name=".DoctorDashboard" />
+        <activity android:name=".Otp" />
+        <activity android:name=".ProgressingStaff"></activity>
     </application>
 
 </manifest>
