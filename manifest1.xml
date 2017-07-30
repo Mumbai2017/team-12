@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/weblogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,17 @@
         <activity
             android:name=".VolunteerDashboardActivity"
             android:label="@string/title_activity_volunteer_dashboard"
+<<<<<<< HEAD
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+        <activity android:name=".MainActivity" />
+      
+
+=======
             android:theme="@style/AppTheme.NoActionBar" />
+>>>>>>> aa6c8ecf28d622a5f939575c474107fac8878235
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".DonorActivity" />

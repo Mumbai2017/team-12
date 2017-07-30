@@ -42,7 +42,7 @@ $res = mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($res)//get first row only
 
 
-$sql = "Update childprofile set vol_id='{$row['volunteer_id']}' where id='{$id}'";
+$sql = "Update childprofile set vol_id='{$row['volunteer_id']}', status = 3 where id='{$id}'";
 
 array_push($response, array("code"=>$code,"message"=>$message));
 
