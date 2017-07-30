@@ -32,9 +32,10 @@ public class Submitted extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<staffModel> arraylist = new ArrayList<>();
-    String url = "http://freeecommercewebsite.in/Cfg/doctorRecycler.php";
+    String url = "http://freeecommercewebsite.in/Cfg/staff_fetchdata_3.php";
     public static int flag = 11;
     public static String childName = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,19 +62,19 @@ public class Submitted extends AppCompatActivity {
     }
 
     public synchronized void getList() {
-        int id=1;
+        int id = 1;
         Toast.makeText(this, "gfdgdgl", Toast.LENGTH_SHORT).show();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url+"?id="+id, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url + "?id=" + id, null,
                 new Response.Listener<org.json.JSONArray>() {
 
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
-                        Toast.makeText(Submitted.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
-                        Log.d("TAG",""+response);
+                        Toast.makeText(Submitted.this, "called1" + response.length(), Toast.LENGTH_SHORT).show();
+                        Log.d("TAG", "" + response);
                         while (count < response.length()) {
 
-                            Toast.makeText(Submitted.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Submitted.this, "dsad" + response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
