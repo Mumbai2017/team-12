@@ -25,6 +25,7 @@ public class Volunteer_Form1 extends AppCompatActivity {
 
     EditText aboutFamily, aboutFriends, color, game, food, music, hobby, tv_show, actor, trip, describePlan;
     RadioGroup parentIdbtn;
+    String url="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
