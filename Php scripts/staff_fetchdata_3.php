@@ -1,14 +1,15 @@
 <?php
-require 'init.php';
+require('init.php');
 
-$sql = "SELECT * from childprofile where status==5"
+$sql="select * from childprofile where status == 5";
+//echo $sql;
+$res=mysqli_query($con,$sql);
+
 $response=array();
+while($row=mysqli_fetch_assoc($res)){
+	array_push($response,array("name"=>$row['child_name'],"status"=>$row['status'],"hospital"=>$row['hospital'],"contact_no"=>$row['contact_no']));
+}
 
-if($result=mysqli_query($con,$sql)){
-	while($row=mysqli_fetch_assoc($result)){
-        array_push($response,array("child_name"=>$row['child_name'],"id"=>$row['id'],"hospital"=>$row['hospital'],"contact_no"=>$row['contact_no'],"approved_wish"=>$row['approved_wish'],"status"=>$row['status']),"donor"=>$row['donor_id'],);
-          }
-	}
 echo json_encode($response);
 
 

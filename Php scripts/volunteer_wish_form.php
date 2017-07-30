@@ -23,7 +23,7 @@ $govtid='govtid';
 $idno='5';
 $hospital='hospital';*/
 
-$sql = "UPDATE TABLE childprofile set wish1=".$wishType1.' '.$wish1.",wish2=".$wishType2.' '.$wish2.",wish3=".$wishType3.' '.$wish3.", bigwish1=".$wish_desc1.", bigwish2=".$wish_desc2.", bigwish3=".$wish_desc3." where id=".$id."; ";
+$sql = "UPDATE TABLE childprofile set wish1=".$wishType1.' '.$wish1.",wish2=".$wishType2.' '.$wish2.",wish3=".$wishType3.' '.$wish3.", bigwish1=".$wish_desc1.", bigwish2=".$wish_desc2.", bigwish3=".$wish_desc3." where id=".$id.";";
 
 $response=array();
 
