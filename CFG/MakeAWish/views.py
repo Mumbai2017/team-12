@@ -34,11 +34,7 @@ def doctor_panel(request):
 
 
 def donoe_panel(request):
-    methods = Donor.objects.get()
-    context_dict = {
-        'methods': methods
-    }
-    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html', context_dict)
+    return render(request, TEMPLATE_PATH + '/MakeAWish/donor.html')
 
 
 # View for the Staff Dashboard
@@ -56,4 +52,3 @@ def staff_full(request):
 
 def staff_mail(request):
     return render(request, TEMPLATE_PATH + '/MakeAWish/staff/mail.html')
-
