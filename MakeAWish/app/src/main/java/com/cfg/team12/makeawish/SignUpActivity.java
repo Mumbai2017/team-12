@@ -1,6 +1,7 @@
 package com.cfg.team12.makeawish;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -72,7 +73,11 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if(response.equals())
+                if(response.equals("Registered")){
+                    startActivity(new Intent(SignUpActivity.this,VolunteerDashboardActivity.class));
+                }else{
+                    Toast.makeText(SignUpActivity.this, "Registeration failed", Toast.LENGTH_SHORT).show();
+                }
                /* builder.setTitle("Server Response");
                 builder.setMessage("Response"+response);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
