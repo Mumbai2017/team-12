@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import info.hoang8f.widget.FButton;
 
-public class StaffMain extends AppCompatActivity {
+public class StaffLogin extends AppCompatActivity {
 
     @InjectView(R.id.btn_refer)
     FButton btnRefer;
@@ -19,31 +19,32 @@ public class StaffMain extends AppCompatActivity {
 
     @InjectView(R.id.btn_register)
     FButton btnReg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staff_main);
+        setContentView(R.layout.activity_main);
 
         ButterKnife.inject(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,LoginActivity.class));
+                startActivity(new Intent(StaffLogin.this, LoginActivity.class));
             }
         });
 
         btnRefer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,ReferActivity.class));
+                startActivity(new Intent(StaffLogin.this, ReferActivity.class));
             }
         });
 
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffMain.this,SignUpActivity.class));
+                startActivity(new Intent(StaffLogin.this, SignUpActivity.class));
             }
         });
     }
