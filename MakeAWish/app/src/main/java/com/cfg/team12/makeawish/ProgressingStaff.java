@@ -156,9 +156,9 @@ public class ProgressingStaff extends AppCompatActivity {
         @Override
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
-            DoctorModel rf = referredDatas.get(position);
+             rf = referredDatas.get(position);
             // Toast.makeText(DoctorDashboard.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
-            holder.txtHospital.setText(referredDatas.get(position).getHospital());
+            holder.txtAddress.setText(referredDatas.get(position).getAddress());
             holder.txtName.setText(referredDatas.get(position).getChildName());
             holder.txtContact.setText(referredDatas.get(position).getStatus());
             //  holder.id = referredDatas.get(position).id;
@@ -174,16 +174,16 @@ public class ProgressingStaff extends AppCompatActivity {
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        protected TextView txtName, txtHospital, txtContact;
+        protected TextView txtName, txtAddress;
         protected ImageView imageView;
         int id;
 
         public RecyclerViewHolder(View itemView, final Context context) {
             super(itemView);
-            txtName = (TextView) itemView.findViewById(R.id.childsName);
+            txtName = (TextView) itemView.findViewById(R.id.txt_name);
 
-            txtHospital = (TextView) itemView.findViewById(R.id.nameOFHospital);
-            txtContact = (TextView) itemView.findViewById(R.id.contact);
+            txtAddress = (TextView) itemView.findViewById(R.id.txt_address);
+
 
 
                 /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
@@ -192,7 +192,7 @@ public class ProgressingStaff extends AppCompatActivity {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int itemPosition = recyclerView.getChildLayoutPosition(v);
+                   // int itemPosition = recyclerView.getChildLayoutPosition(v);
                     //flag = id;
 
                     //  Toast.makeText(getApplicationContext(), "" + flag, Toast.LENGTH_LONG).show();

@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.cfg.team12.makeawish.model.MySingleton;
+import com.cfg.team12.makeawish.model.staffModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +29,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ApprovedStaff extends AppCompatActivity {
-
+    private RecyclerView recyclerView;
+    private RecyclerViewAdapter recyclerViewAdapter;
+    ArrayList<staffModel> arraylist = new ArrayList<>();
+    String url = "http://freeecommercewebsite.in/Cfg/doctorRecycler.php";
+    public static int flag = 11;
+    public static String childName = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +45,10 @@ public class ApprovedStaff extends AppCompatActivity {
         BigInteger bigInteger = new BigInteger("543534535");*/
 
         //ReferredData referredData = new ReferredData("Rohit", "Mumbai", bigInteger);
-        DoctorModel doctorModel = new DoctorModel("name",
+        staffModel staffModel = new staffModel("name",
                 "hospital", "status",
                 "contact_no");
-        arraylist.add(doctorModel);
+        arraylist.add(staffModel);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(arraylist);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -63,16 +69,16 @@ public class ApprovedStaff extends AppCompatActivity {
                     @Override
                     public void onResponse(org.json.JSONArray response) {
                         int count = 0;
-                        Toast.makeText(DoctorDashboard.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ApprovedStaff.this, "called1"+response.length(), Toast.LENGTH_SHORT).show();
                         Log.d("TAG",""+response);
                         while (count < response.length()) {
 
-                            Toast.makeText(DoctorDashboard.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ApprovedStaff.this, "dsad"+response.length(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsoNobject = response.getJSONObject(count);
                                 // BigInteger bigInteger = (BigInteger) jsoNobject.get("contact_no");
-                                Toast.makeText(DoctorDashboard.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
-                                DoctorModel doctorModel = new DoctorModel(jsoNobject.getString("name"),
+                                Toast.makeText(ApprovedStaff.this, "" + jsoNobject, Toast.LENGTH_SHORT).show();
+                                staffModel staffModel = new staffModel(jsoNobject.getString("child_name"),
                                         jsoNobject.getString("hospital"), jsoNobject.getString("status"),
                                         jsoNobject.getString("contact_no"));
                              /*   ReferredData referredData = new ReferredData(jsoNobject.getString("child_name"),
@@ -80,7 +86,7 @@ public class ApprovedStaff extends AppCompatActivity {
                                         bigInteger);*/
                                 //Toast.makeText(context, "Name TEst:" + jsoNobject.getString("name"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(context, count+""+arrayList, Toast.LENGTH_SHORT).show();
-                                arraylist.add(doctorModel);
+                                arraylist.add(staffModel);
 
                                 //  Toast.makeText(context, count + " - count," + arrayList.get(0), Toast.LENGTH_SHORT).show();
                                 count++;
@@ -138,11 +144,11 @@ public class ApprovedStaff extends AppCompatActivity {
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
-        public ArrayList<DoctorModel> referredDatas = new ArrayList<>();
+        public ArrayList<staffModel> referredDatas = new ArrayList<>();
         //  ArrayList<Bitmap> forecasrArrayList = new ArrayList<>();
 
 
-        RecyclerViewAdapter(ArrayList<DoctorModel> referredDataArrayList) {
+        RecyclerViewAdapter(ArrayList<staffModel> referredDataArrayList) {
             referredDatas = referredDataArrayList;
 
         }
@@ -156,11 +162,11 @@ public class ApprovedStaff extends AppCompatActivity {
         @Override
         public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
-            DoctorModel rf = referredDatas.get(position);
-            // Toast.makeText(DoctorDashboard.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
-            holder.txtHospital.setText(referredDatas.get(position).getHospital());
-            holder.txtName.setText(referredDatas.get(position).getChildName());
-            holder.txtContact.setText(referredDatas.get(position).getStatus());
+            staffModel rf = referredDatas.get(position);
+            // Toast.makeText(ApprovedStaff.this, "" + rf.get(position).get, Toast.LENGTH_SHORT).show();
+
+            holder.txtName.setText(referredDatas.get(position).getChild_name());
+            holder.txtAddress.setText(referredDatas.get(position).getHospital());
             //  holder.id = referredDatas.get(position).id;
 
         }
@@ -174,16 +180,16 @@ public class ApprovedStaff extends AppCompatActivity {
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        protected TextView txtName, txtHospital, txtContact;
+        protected TextView txtName, txtAddress;
         protected ImageView imageView;
         int id;
 
         public RecyclerViewHolder(View itemView, final Context context) {
             super(itemView);
-            txtName = (TextView) itemView.findViewById(R.id.childsName);
+            txtName = (TextView) itemView.findViewById(R.id.txt_name);
 
-            txtHospital = (TextView) itemView.findViewById(R.id.nameOFHospital);
-            txtContact = (TextView) itemView.findViewById(R.id.contact);
+            txtAddress = (TextView) itemView.findViewById(R.id.txt_address);
+
 
 
                 /*RelativeLayout relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rel_list);*/
@@ -192,7 +198,7 @@ public class ApprovedStaff extends AppCompatActivity {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int itemPosition = recyclerView.getChildLayoutPosition(v);
+                    // int itemPosition = recyclerView.getChildLayoutPosition(v);
                     //flag = id;
 
                     //  Toast.makeText(getApplicationContext(), "" + flag, Toast.LENGTH_LONG).show();
