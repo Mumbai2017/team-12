@@ -89,11 +89,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (response.equals("Login success")) {
                     if (selected.equals("Donor")) {
-                        startActivity(new Intent(LoginActivity.this, DonorActivity.class));
+                        Intent i = new Intent(LoginActivity.this, DonorActivity.class);
+                        i.putExtra("email",email);
+                        startActivity(i);
                     } else if (selected.equals("Doctor")) {
-                        startActivity(new Intent(LoginActivity.this, DoctorDashboard.class));
+                        Intent i = new Intent(LoginActivity.this, DoctorDashboard.class);
+                        i.putExtra("email",email);
+                        startActivity(i);
                     } else {
-                        startActivity(new Intent(LoginActivity.this, VolunteerDashboardActivity.class));
+                        Intent i = new Intent(LoginActivity.this, VolunteerDashboardActivity.class);
+                        i.putExtra("email",email);
+                        startActivity(i);
                     }
 
                 } else {
