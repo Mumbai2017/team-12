@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wishes.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/MakeAWish/wishes.html">
+      <file leaf-file-name="vol.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/MakeAWish/vol.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="187" column="52" lean-forward="false" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="52" />
+            <state relative-caret-position="122">
+              <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -127,7 +127,6 @@
         <option value="$PROJECT_DIR$/CFG/urls.py" />
         <option value="$PROJECT_DIR$/MakeAWish/admin.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/doc.html" />
-        <option value="$PROJECT_DIR$/templates/MakeAWish/vol.html" />
         <option value="$PROJECT_DIR$/MakeAWish/models.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/index.html" />
         <option value="$PROJECT_DIR$/MakeAWish/views.py" />
@@ -139,11 +138,12 @@
         <option value="$PROJECT_DIR$/templates/MakeAWish/staff/staff.html" />
         <option value="$PROJECT_DIR$/CFG/settings.py" />
         <option value="$PROJECT_DIR$/templates/MakeAWish/wishes.html" />
+        <option value="$PROJECT_DIR$/templates/MakeAWish/vol.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1415" />
+    <option name="x" value="49" />
     <option name="y" value="764" />
     <option name="width" value="1317" />
     <option name="height" value="772" />
@@ -414,7 +414,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1415" y="764" width="1317" height="772" extended-state="6" />
+    <frame x="49" y="764" width="1317" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981017" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -505,14 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/vol.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -617,6 +609,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/wishes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="187" column="52" lean-forward="false" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CFG/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -625,10 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/wishes.html">
+    <entry file="file://$PROJECT_DIR$/templates/MakeAWish/vol.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="187" column="52" lean-forward="false" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="52" />
+        <state relative-caret-position="122">
+          <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
           <folding />
         </state>
       </provider>
